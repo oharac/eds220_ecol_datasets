@@ -1,0 +1,140 @@
+---
+title: "Exploring some ecological datasets"
+format: 
+  html:
+    code-fold: true
+    code-summary: "Show me the code"
+editor: visual
+execute:
+  echo: true
+  warning: false
+  message: false
+---
+
+```{r}
+library(tidyverse)
+library(terra)
+library(jsonlite)
+```
+
+# Overview
+
+## IUCN API
+
+The IUCN API documentation is here: https://apiv3.iucnredlist.org/api/v3/docs
+
+All API calls will start with most of that as a stem. We will change the endpoints to access different types of information, sometimes requiring us to include additional parameters.
+
+For most endpoints we will also need an authorization token.
+
+Try one of the examples, and note how the URL is filled in with different parameters and token=XXXXX. We'll borrow that token for our work today, but if you do real work with this API, request your own token.
+
+Use `usethis::edit_r_environ()` to open `.Renviron` file. Type a key name, then paste in key, then save and close. Access using `Sys.getenv()`
+
+```{r}
+iucn_token <- Sys.getenv('IUCN_KEY')
+```
+
+### Access info on many species (one page)
+
+Assemble a URL and pass it parameters. Inspect the JSON (JavaScript Object Notation). Read it in as a dataframe using `jsonlite::fromJSON()`
+
+```{r}
+iucn_url <- 'https://apiv3.iucnredlist.org'
+spp_page_endpoint <- paste0(iucn_url, '/api/v3/species/page/%s?token=%s')
+
+spp_page_url <- sprintf(spp_page_endpoint, 2, iucn_token)
+
+spp_page <- jsonlite::fromJSON(spp_page_url)
+
+spp_page_df <- spp_page$result # or spp_page[['result']]
+
+```
+
+### Access specific info on a single species
+
+Humpback whale is ID \# 13006. Let's find the countries where it can be found!
+
+```{r}
+spp_country_endpoint <- paste0(iucn_url, '/api/v3/species/countries/id/%s?token=%s')
+spp_country_url <- sprintf(spp_country_endpoint, 283, iucn_token)
+
+spp_ctry <- jsonlite::fromJSON(spp_country_url)
+spp_ctry_df <- spp_ctry$result
+```
+
+## WoRMS API
+
+Now let's try it with the World Register of Marine Species! https://www.marinespecies.org/rest
+
+### Access AphiaID for a genus name
+
+Let's find the ID for genus Balaenoptera, a group that includes the biggest whales in the oceans.
+
+```{r}
+worms_url <- 'https://www.marinespecies.org/rest/'
+worms_id_endpoint <- paste0(worms_url, 'AphiaIDByName/%s')
+worms_id_url <- sprintf(worms_id_endpoint, 'balaenoptera')
+worms_id <- jsonlite::fromJSON(worms_id_url)
+
+```
+
+### Access children of a genus
+
+The ID for Balaenoptera is 137013, but it is stored in a variable already.  Let's find the "children", i.e., the members of the next classification down (genus -> species)
+
+```{r}
+worms_child_endpoint <- paste0(worms_url, 'AphiaChildrenByAphiaID/%s')
+worms_child_url <- sprintf(worms_child_endpoint, worms_id)
+worms_child <- jsonlite::fromJSON(worms_child_url)
+
+worms_child_acc <- worms_child %>%
+  filter(status == 'accepted')
+```
+
+### Access classification of a species
+
+Not all returned data are equally easy to work with - here's a list of lists of lists.
+```{r}
+worms_class_endpoint <- paste0(worms_url, 'AphiaClassificationByAphiaID/%s')
+worms_class_url <- sprintf(worms_class_endpoint, worms_id)
+worms_class <- jsonlite::fromJSON(worms_class_url)
+
+```
+
+Many coders have developed packages to work with specific APIs - the ROpenSci `taxize` package works well with taxonomic info from WoRMS and several other sources.  There's also a `rredlist` package for working with the IUCN RedList API.
+
+## Read in data
+
+### read in cleaned IUCN data
+
+-   note species ID, name, and risk category among other data
+
+### Read in cleaned AquaMaps species info
+
+-   note sciname, taxonomy, risk category, IUCN id, and AquaMaps ID
+
+### Read in cleaned AquaMaps species-cell info
+
+-   note loiczid, aquamaps id, prob
+
+### Read in cleaned HCAF data
+
+-   then convert to LOICZID raster as base raster
+
+## Start joining
+
+-   use IUCN instead of AquaMaps for risk category: keep id, risk category
+-   use AquaMaps instead of IUCN for sciname: keep IUCN id, AM id, and sciname
+-   join these
+-   now join species info onto spp-cell info
+-   filter by some minimum probability?
+-   assign numeric values to risk codes using
+
+## Analysis 1: species richness
+
+-   group_by cell, summarize n_distinct(species), map to base raster
+
+## Analysis 2: mean risk
+
+-   group_by cell, summarize mean(risk score, na.rm = TRUE), map to base raster
