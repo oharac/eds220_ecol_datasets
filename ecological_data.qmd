@@ -13,8 +13,11 @@ execute:
 
 ```{r}
 library(tidyverse)
-library(terra)
+library(terra) ### remotes::install_github('rspatial/terra')
+library(sf)
 library(jsonlite)
+library(here)
+library(rnaturalearth)
 ```
 
 # Overview
@@ -53,14 +56,16 @@ spp_page_df <- spp_page$result # or spp_page[['result']]
 
 ### Access specific info on a single species
 
-Humpback whale is ID \# 13006. Let's find the countries where it can be found!
+Humpback whale is ID \# 13006. Let's find the countries where it can be found! (or try a different taxon ID from the previous step)
 
 ```{r}
 spp_country_endpoint <- paste0(iucn_url, '/api/v3/species/countries/id/%s?token=%s')
-spp_country_url <- sprintf(spp_country_endpoint, 283, iucn_token)
+spp_country_url <- sprintf(spp_country_endpoint, 13006, iucn_token)
 
 spp_ctry <- jsonlite::fromJSON(spp_country_url)
 spp_ctry_df <- spp_ctry$result
+
+DT::datatable(spp_ctry_df)
 ```
 
 ## WoRMS API
@@ -81,7 +86,7 @@ worms_id <- jsonlite::fromJSON(worms_id_url)
 
 ### Access children of a genus
 
-The ID for Balaenoptera is 137013, but it is stored in a variable already.  Let's find the "children", i.e., the members of the next classification down (genus -> species)
+The ID for Balaenoptera is 137013, but it is stored in a variable already. Let's find the "children", i.e., the members of the next classification down (genus -\> species)
 
 ```{r}
 worms_child_endpoint <- paste0(worms_url, 'AphiaChildrenByAphiaID/%s')
@@ -90,11 +95,14 @@ worms_child <- jsonlite::fromJSON(worms_child_url)
 
 worms_child_acc <- worms_child %>%
   filter(status == 'accepted')
+
+DT::datatable(worms_child)
 ```
 
 ### Access classification of a species
 
 Not all returned data are equally easy to work with - here's a list of lists of lists.
+
 ```{r}
 worms_class_endpoint <- paste0(worms_url, 'AphiaClassificationByAphiaID/%s')
 worms_class_url <- sprintf(worms_class_endpoint, worms_id)
@@ -102,39 +110,157 @@ worms_class <- jsonlite::fromJSON(worms_class_url)
 
 ```
 
-Many coders have developed packages to work with specific APIs - the ROpenSci `taxize` package works well with taxonomic info from WoRMS and several other sources.  There's also a `rredlist` package for working with the IUCN RedList API.
+Many coders have developed packages to work with specific APIs - the ROpenSci `taxize` package works well with taxonomic info from WoRMS and several other sources. There's also a `rredlist` package for working with the IUCN RedList API.
 
 ## Read in data
 
 ### read in cleaned IUCN data
 
--   note species ID, name, and risk category among other data
+This set of species includes all marine-associated mammals only.  For now, note IUCN species ID, scientific and common name, and risk category, among other information.  The risk category is what we want - up to date as of the end of 2021.
+
+```{r}
+iucn_spp_df <- read_csv(here('data/iucn_mar_mammal_info_v2021-3.csv'))
+```
 
 ### Read in cleaned AquaMaps species info
 
--   note sciname, taxonomy, risk category, IUCN id, and AquaMaps ID
+This set of species includes all marine mammals only.  For now, note AquaMaps species ID, IUCN species ID, name, sciname, and risk category, among other information.  Here, the risk category is not up to date - this dataset was last updated in 2020.
+
+The critical piece here is the AquaMaps species ID, which we need to know for the spatial information in a moment.  We'll use IUCN id to join the up-to-date risk category to the AquaMaps species ID.
+
+```{r}
+am_spp_df <- read_csv(here('data/am_mammal_info_v10_2019.csv')) %>%
+  janitor::clean_names() %>%
+  rename(am_sid = species_id, iucn_sid = iucn_id)
+```
 
 ### Read in cleaned AquaMaps species-cell info
 
--   note loiczid, aquamaps id, prob
+Note the columns loiczid, AquaMaps species id, and probability of occurrence.  LOICZID is a cell code that we'll match to spatial information in a minute.
+
+```{r}
+am_spp_cells_df <- read_csv(here('data/am_mammal_hcaf_cropped_v10_2019.csv'))
+```
+
 
 ### Read in cleaned HCAF data
 
--   then convert to LOICZID raster as base raster
+This is cropped to the Eastern Pacific Ocean - east of -150 longitude, north of the equator.  We will turn this into a raster for mapping our species!
+
+```{r}
+am_hcaf_df <- read_csv(here('data/am_hcaf_cropped_v7.csv')) %>%
+  janitor::clean_names()
+
+longlat_id_df <- am_hcaf_df %>%
+  filter(ocean_area > 0) %>%
+  select(center_long, center_lat, loiczid)
+
+hcaf_r <- rast(longlat_id_df, type = 'xyz', crs = 'epsg:4326')
+
+plot(hcaf_r)
+```
 
 ## Start joining
 
--   use IUCN instead of AquaMaps for risk category: keep id, risk category
--   use AquaMaps instead of IUCN for sciname: keep IUCN id, AM id, and sciname
--   join these
--   now join species info onto spp-cell info
--   filter by some minimum probability?
--   assign numeric values to risk codes using
+We want to map IUCN risk codes against AquaMaps spatial data.  Join the IUCN and AquaMaps information, to get the risk codes attached to the AquaMaps ids.  
 
-## Analysis 1: species richness
+Then, using AquaMaps IDs, join the risk codes to the LOICZID information.  Some mammal spp don't occur in our selected region (e.g., South African fur seal), so end up with NA for LOICZID.
 
--   group_by cell, summarize n_distinct(species), map to base raster
+```{r}
+id_risk_df <- iucn_spp_df %>%
+  select(iucn_sid, sciname, category) %>%
+  mutate(cat_score = case_when(category == 'LC' ~ 0,
+                               category == 'NT' ~ 1,
+                               category == 'VU' ~ 2,
+                               category == 'EN' ~ 3,
+                               category == 'CR' ~ 4,
+                               category == 'EX' ~ 5,
+                               TRUE ~ NA_real_)) %>%
+  left_join(am_spp_df, by = 'iucn_sid') %>%
+  select(iucn_sid, am_sid, sciname, f_bname, category, cat_score) %>%
+  filter(!is.na(am_sid))
 
-## Analysis 2: mean risk
+risk_cells_df <- id_risk_df %>%
+  left_join(am_spp_cells_df, by = 'am_sid')
+```
 
--   group_by cell, summarize mean(risk score, na.rm = TRUE), map to base raster
+## Analysis 1: map a single species by relative environmental suitability
+
+Let's look at suitability of environments for killer whales, aka _Orcinus orca_.  We'll create a raster based on our cropped HCAF, by substituting in values of prob for values of LOICZID.
+```{r}
+orca_df <- risk_cells_df %>%
+  filter(sciname == 'Orcinus orca')
+
+orca_prob_r <- terra::subst(hcaf_r, 
+                            from = orca_df$loiczid, 
+                            to = orca_df$prob,
+                            others = NA) ### "others" is in dev version
+  
+plot(orca_prob_r,
+     main = 'probability of occurrence for Orcinus orca')
+```
+
+### Let's ggplot it
+
+``` {r}
+orca_prob_df <- as.data.frame(orca_prob_r, xy = TRUE) %>%
+  rename(prob = loiczid)
+
+land_sf <- ne_countries(scale = 110, 
+                        continent = 'north america',
+                        returnclass = 'sf')
+
+ggplot() +
+  geom_raster(data = orca_prob_df, aes(x, y, fill = prob)) +
+  scale_fill_viridis_c() +
+  geom_sf(data = land_sf) +
+  coord_sf(xlim = c(-150, -100), ylim = c(0, 60)) +
+  theme_void()
+
+```
+
+
+## Analysis 2: species richness
+
+Here we can group by cell and count up the number of spp found.  Note, we may want to not count species with low probability of occurrence - let's apply a filter for probability at least 50%.
+
+```{r}
+spp_rich_df <- risk_cells_df %>%
+  filter(prob >= 0.5) %>%
+  group_by(loiczid) %>%
+  summarize(n_spp = n_distinct(am_sid))
+
+spp_rich_r <- terra::subst(hcaf_r, 
+                           from = spp_rich_df$loiczid, 
+                           to = spp_rich_df$n_spp,
+                           others = NA)
+  
+plot(spp_rich_r,
+     main = 'Species richness of marine mammals')
+```
+
+### ggplot at your leisure
+
+## Analysis 3: mean risk
+
+Here we can group by cell and find the average risk.  First, let's see how many spp in each risk category.
+
+```{r}
+table(id_risk_df$category) ### note a few DD
+
+mean_risk_df <- risk_cells_df %>%
+  filter(prob >= 0.5) %>%
+  group_by(loiczid) %>%
+  summarize(mean_risk = mean(cat_score))
+  # summarize(mean_risk = mean(cat_score, na.rm = TRUE))
+
+mean_risk_r <- terra::subst(hcaf_r, 
+                           from = mean_risk_df$loiczid, 
+                           to = mean_risk_df$mean_risk,
+                           others = NA)
+  
+plot(mean_risk_r,
+     main = 'Species richness of marine mammals')
+```
+
+

@@ -1,0 +1,85 @@
+---
+title: "Prepping IUCN and AM data for file size"
+format: 
+  html:
+    code-fold: true
+    code-summary: "Show me the code"
+editor: visual
+execute:
+  echo: true
+  warning: false
+  message: false
+---
+
+```{r}
+library(tidyverse)
+library(terra)
+library(jsonlite)
+library(here)
+```
+
+# Prep data for live coding
+
+
+## Prep IUCN data
+
+This set of species includes all marine-associated mammals only. For now, note IUCN species ID, scientific and common name, and risk category, among other information. The risk category is what we want - up to date as of the end of 2021.
+
+```{r}
+
+iucn_dir <- '/home/shares/ohi/spp_vuln/spp_vuln_mapping/iucn_spp'
+full_data_f <- file.path(iucn_dir, 'spp_info_from_api_2021-3.csv')
+full_df <- read_csv(full_data_f)
+
+hab_data_f <- file.path(iucn_dir, 'spp_habs_from_api_2021-3.csv')
+hab_df <- read_csv(hab_data_f)
+
+hab_cols <- names(hab_df)
+
+mar_mamm_df <- full_df %>%
+  filter(class == 'MAMMALIA') %>%
+  left_join(hab_df, by = 'iucn_sid') %>%
+  filter(str_detect(habitat, '^Marine')) %>%
+  filter(suitability == 'Suitable') %>%
+  select(everything(), -all_of(hab_cols), iucn_sid) %>%
+  distinct()
+write_csv(mar_mamm_df, here('data/iucn_mar_mammal_info_v2021-3.csv'))
+```
+
+## Prep AquaMaps species info
+
+This set of species includes all marine mammals only. For now, note AquaMaps species ID, IUCN species ID, name, sciname, and risk category, among other information. Here, the risk category is not up to date - this dataset was last updated in 2019.
+
+```{r}
+am_dir <- '/home/shares/ohi/git-annex/aquamaps_2021'
+am_spp_f <- file.path(am_dir, 'ver10_2019_speciesoccursum_iucn.csv')
+am_spp_df <- read_tsv(am_spp_f) %>% ### why is this tab separated?
+  filter(Class == 'Mammalia')
+write_csv(am_spp_df, here('data/am_mammal_info_v10_2019.csv'))
+```
+
+```{r}
+base_r <- rast(xmin = -180, xmax = 180, ymin = -90, ymax = 90, resolution = 0.5, crs = 'epsg:4326') %>%
+  setValues(1:ncell(.))
+ca_ext <- ext(c(-150, -100, 0, 65))
+
+cropped_r <- base_r %>%
+  crop(ca_ext)
+loiczid_vec <- values(cropped_r)
+
+hcaf_f <- file.path(am_dir, 'hcaf_v7.csv')
+hcaf_cropped_df <- read_csv(hcaf_f) %>%
+  filter(LOICZID %in% loiczid_vec)
+
+write_csv(hcaf_cropped_df, here('data/am_hcaf_cropped_v7.csv'))
+
+am_spp_cell_f <- file.path(am_dir, 'hcaf_species_native_clean.csv')
+am_spp_cell_df <- data.table::fread(am_spp_cell_f)
+am_spp_cell_mamm <- am_spp_cell_df %>%
+  filter(am_sid %in% am_spp_df$SpeciesID) %>%
+  filter(loiczid %in% loiczid_vec)
+
+write_csv(am_spp_cell_mamm, here('data/am_mammal_hcaf_cropped_v10_2019.csv'))
+
+```
+

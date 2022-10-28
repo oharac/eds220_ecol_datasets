@@ -1,0 +1,263 @@
+kingdom,phylum,class,order,family,genus,sciname,taxonomic_authority,population,category,main_common,iucn_sid
+ANIMALIA,CHORDATA,MAMMALIA,RODENTIA,DIPODIDAE,Allactaga,Allactaga tetradactyla,"(Lichtenstein, 1823)",NA,DD,Four-toed Jerboa,850
+ANIMALIA,CHORDATA,MAMMALIA,CARNIVORA,MUSTELIDAE,Aonyx,Aonyx capensis,"(Schinz, 1821)",NA,NT,African Clawless Otter,1793
+ANIMALIA,CHORDATA,MAMMALIA,RODENTIA,MURIDAE,Apodemus,Apodemus sylvaticus,"(Linnaeus, 1758)",NA,LC,Long-tailed Field Mouse,1904
+ANIMALIA,CHORDATA,MAMMALIA,CARNIVORA,OTARIIDAE,Arctocephalus,Arctocephalus australis,"(Zimmermann, 1783)",NA,LC,South American Fur Seal,2055
+ANIMALIA,CHORDATA,MAMMALIA,CARNIVORA,OTARIIDAE,Arctocephalus,Arctocephalus galapagoensis,"Heller, 1904",NA,EN,Galápagos Fur Seal,2057
+ANIMALIA,CHORDATA,MAMMALIA,CARNIVORA,OTARIIDAE,Arctocephalus,Arctocephalus gazella,"(Peters, 1875)",NA,LC,Antarctic Fur Seal,2058
+ANIMALIA,CHORDATA,MAMMALIA,CARNIVORA,OTARIIDAE,Arctocephalus,Arctocephalus philippii,"(Peters, 1866)",NA,LC,Juan Fernández Fur Seal,2059
+ANIMALIA,CHORDATA,MAMMALIA,CARNIVORA,OTARIIDAE,Arctocephalus,Arctocephalus pusillus,"(Schreber, 1775)",NA,LC,Afro-Australian Fur Seal,2060
+ANIMALIA,CHORDATA,MAMMALIA,CARNIVORA,OTARIIDAE,Arctocephalus,Arctocephalus townsendi,"Merriam, 1897",NA,LC,Guadalupe Fur Seal,2061
+ANIMALIA,CHORDATA,MAMMALIA,CARNIVORA,OTARIIDAE,Arctocephalus,Arctocephalus tropicalis,"(J.E. Gray, 1872)",NA,LC,Subantarctic Fur Seal,2062
+ANIMALIA,CHORDATA,MAMMALIA,CARNIVORA,OTARIIDAE,Arctocephalus,Arctocephalus australis ssp. australis,"(Zimmermann, 1783)",NA,LC,South American Fur Seal,2064
+ANIMALIA,CHORDATA,MAMMALIA,CARNIVORA,OTARIIDAE,Arctocephalus,Arctocephalus pusillus ssp. pusillus,"(Schreber, 1775)",NA,LC,Cape Fur Seal,2066
+ANIMALIA,CHORDATA,MAMMALIA,CARNIVORA,OTARIIDAE,Arctocephalus,Arctocephalus pusillus ssp. doriferus,"Wood Jones, 1925",NA,LC,Australian Fur Seal,2067
+ANIMALIA,CHORDATA,MAMMALIA,CETARTIODACTYLA,BALAENIDAE,Balaena,Balaena mysticetus,"Linnaeus, 1758",NA,LC,Bowhead Whale,2467
+ANIMALIA,CHORDATA,MAMMALIA,CETARTIODACTYLA,BALAENIDAE,Balaena,Balaena mysticetus,"Linnaeus, 1758",Bering-Chukchi-Beaufort Sea subpopulation,LR/cd,Bowhead Whale Bering-Chukchi-Beaufort Seas subpopulation,2468
+ANIMALIA,CHORDATA,MAMMALIA,CETARTIODACTYLA,BALAENIDAE,Balaena,Balaena mysticetus,"Linnaeus, 1758",Okhotsk Sea subpopulation,EN,Okhotsk Sea Bowhead Whale,2469
+ANIMALIA,CHORDATA,MAMMALIA,CETARTIODACTYLA,BALAENOPTERIDAE,Balaenoptera,Balaenoptera acutorostrata,"Lacépède, 1804",NA,LC,Common Minke Whale,2474
+ANIMALIA,CHORDATA,MAMMALIA,CETARTIODACTYLA,BALAENOPTERIDAE,Balaenoptera,Balaenoptera borealis,"Lesson, 1828",NA,EN,Sei Whale,2475
+ANIMALIA,CHORDATA,MAMMALIA,CETARTIODACTYLA,BALAENOPTERIDAE,Balaenoptera,Balaenoptera edeni,"Anderson, 1879",NA,LC,Rice's Whale,2476
+ANIMALIA,CHORDATA,MAMMALIA,CETARTIODACTYLA,BALAENOPTERIDAE,Balaenoptera,Balaenoptera musculus,"(Linnaeus, 1758)",NA,EN,Blue Whale,2477
+ANIMALIA,CHORDATA,MAMMALIA,CETARTIODACTYLA,BALAENOPTERIDAE,Balaenoptera,Balaenoptera physalus,"(Linnaeus, 1758)",NA,VU,Fin Whale,2478
+ANIMALIA,CHORDATA,MAMMALIA,CETARTIODACTYLA,BALAENOPTERIDAE,Balaenoptera,Balaenoptera bonaerensis,"Burmeister, 1867",NA,NT,Antarctic Minke Whale,2480
+ANIMALIA,CHORDATA,MAMMALIA,CETARTIODACTYLA,ZIPHIIDAE,Berardius,Berardius arnuxii,"Duvernoy, 1851",NA,LC,Arnoux's Beaked Whale,2762
+ANIMALIA,CHORDATA,MAMMALIA,CETARTIODACTYLA,ZIPHIIDAE,Berardius,Berardius bairdii,"Stejneger, 1883",NA,LC,Baird's Beaked Whale,2763
+ANIMALIA,CHORDATA,MAMMALIA,CARNIVORA,OTARIIDAE,Callorhinus,Callorhinus ursinus,"(Linnaeus, 1758)",NA,VU,Northern Fur Seal,3590
+ANIMALIA,CHORDATA,MAMMALIA,CARNIVORA,CANIDAE,Canis,Canis mesomelas,"Schreber, 1775",NA,LC,Black-backed Jackal,3755
+ANIMALIA,CHORDATA,MAMMALIA,CETARTIODACTYLA,NEOBALAENIDAE,Caperea,Caperea marginata,"(Gray, 1846)",NA,LC,Pygmy Right Whale,3778
+ANIMALIA,CHORDATA,MAMMALIA,CETARTIODACTYLA,DELPHINIDAE,Cephalorhynchus,Cephalorhynchus commersonii,"(Lacépède, 1804)",NA,LC,Commerson's Dolphin,4159
+ANIMALIA,CHORDATA,MAMMALIA,CETARTIODACTYLA,DELPHINIDAE,Cephalorhynchus,Cephalorhynchus eutropia,"Gray, 1846",NA,NT,Chilean Dolphin,4160
+ANIMALIA,CHORDATA,MAMMALIA,CETARTIODACTYLA,DELPHINIDAE,Cephalorhynchus,Cephalorhynchus heavisidii,"(Gray, 1828)",NA,NT,Heaviside's Dolphin,4161
+ANIMALIA,CHORDATA,MAMMALIA,CETARTIODACTYLA,DELPHINIDAE,Cephalorhynchus,Cephalorhynchus hectori,"(van Beneden, 1881)",NA,EN,Hector's Dolphin,4162
+ANIMALIA,CHORDATA,MAMMALIA,CHIROPTERA,MOLOSSIDAE,Chaerephon,Chaerephon solomonis,"(Troughton, 1931)",NA,EN,Solomons Free-tailed Bat,4320
+ANIMALIA,CHORDATA,MAMMALIA,EULIPOTYPHLA,SORICIDAE,Crocidura,Crocidura canariensis,"Hutterer, Lopez-Jurado &amp; Vogel, 1987",NA,EN,Canary Shrew,5560
+ANIMALIA,CHORDATA,MAMMALIA,RODENTIA,CTENOMYIDAE,Ctenomys,Ctenomys australis,"Rusconi, 1934",NA,EN,Southern Tuco-tuco,5796
+ANIMALIA,CHORDATA,MAMMALIA,RODENTIA,CTENOMYIDAE,Ctenomys,Ctenomys pearsoni,"Lessa &amp; Langguth, 1983",NA,NT,Pearson's Tuco-tuco,5819
+ANIMALIA,CHORDATA,MAMMALIA,RODENTIA,CTENOMYIDAE,Ctenomys,Ctenomys talarum,"Thomas, 1898",NA,LC,Talas Tuco-tuco,5828
+ANIMALIA,CHORDATA,MAMMALIA,CARNIVORA,PHOCIDAE,Cystophora,Cystophora cristata,"(Erxleben, 1777)",NA,VU,Hooded Seal,6204
+ANIMALIA,CHORDATA,MAMMALIA,CETARTIODACTYLA,MONODONTIDAE,Delphinapterus,Delphinapterus leucas,"(Pallas, 1776)",NA,LC,Beluga Whale,6335
+ANIMALIA,CHORDATA,MAMMALIA,RODENTIA,HETEROMYIDAE,Dipodomys,Dipodomys compactus,"True, 1889",NA,LC,Gulf Coast Kangaroo Rat,6685
+ANIMALIA,CHORDATA,MAMMALIA,SIRENIA,DUGONGIDAE,Dugong,Dugong dugon,"(Müller, 1776)",NA,VU,Dugong,6909
+ANIMALIA,CHORDATA,MAMMALIA,CARNIVORA,MUSTELIDAE,Enhydra,Enhydra lutris,"(Linnaeus, 1758)",NA,EN,Sea Otter,7750
+ANIMALIA,CHORDATA,MAMMALIA,CARNIVORA,PHOCIDAE,Erignathus,Erignathus barbatus,"(Erxleben, 1777)",NA,LC,Bearded Seal,8010
+ANIMALIA,CHORDATA,MAMMALIA,CARNIVORA,PHOCIDAE,Erignathus,Erignathus barbatus ssp. barbatus,"(Erxleben, 1777)",NA,LC,Atlantic Bearded Seal,8012
+ANIMALIA,CHORDATA,MAMMALIA,CARNIVORA,PHOCIDAE,Erignathus,Erignathus barbatus ssp. nauticus,"(Pallas, 1811)",NA,LC,Pacific Bearded Seal,8013
+ANIMALIA,CHORDATA,MAMMALIA,CETARTIODACTYLA,ESCHRICHTIIDAE,Eschrichtius,Eschrichtius robustus,"(Lilljeborg, 1861)",NA,LC,Gray Whale,8097
+ANIMALIA,CHORDATA,MAMMALIA,CETARTIODACTYLA,ESCHRICHTIIDAE,Eschrichtius,Eschrichtius robustus,"(Lilljeborg, 1861)",western subpopulation,EN,Western Gray Whale,8099
+ANIMALIA,CHORDATA,MAMMALIA,CETARTIODACTYLA,BALAENIDAE,Eubalaena,Eubalaena australis,"(Desmoulins, 1822)",NA,LC,Southern Right Whale,8153
+ANIMALIA,CHORDATA,MAMMALIA,CARNIVORA,OTARIIDAE,Eumetopias,Eumetopias jubatus,"(Schreber, 1776)",NA,NT,Steller Sea Lion,8239
+ANIMALIA,CHORDATA,MAMMALIA,CHIROPTERA,MOLOSSIDAE,Eumops,Eumops hansae,"Sanborn, 1932",NA,LC,Sanborn's Bonneted Bat,8245
+ANIMALIA,CHORDATA,MAMMALIA,CETARTIODACTYLA,DELPHINIDAE,Feresa,Feresa attenuata,"Gray, 1875",NA,LC,Pygmy Killer Whale,8551
+ANIMALIA,CHORDATA,MAMMALIA,CETARTIODACTYLA,BOVIDAE,Gazella,Gazella gazella,"(Pallas, 1766)",NA,EN,Mountain Gazelle,8989
+ANIMALIA,CHORDATA,MAMMALIA,RODENTIA,MURIDAE,Gerbillus,Gerbillus amoenus,"(de Winton, 1902)",NA,LC,Pleasant Gerbil,9104
+ANIMALIA,CHORDATA,MAMMALIA,RODENTIA,MURIDAE,Gerbillus,Gerbillus andersoni,"de Winton, 1902",NA,LC,Anderson's Gerbil,9105
+ANIMALIA,CHORDATA,MAMMALIA,RODENTIA,MURIDAE,Gerbillus,Gerbillus gerbillus,"(Olivier, 1801)",NA,LC,Lesser Egyptian Gerbil,9123
+ANIMALIA,CHORDATA,MAMMALIA,RODENTIA,MURIDAE,Gerbillus,Gerbillus grobbeni,"Klaptocz, 1909",NA,DD,Grobben's Gerbil,9125
+ANIMALIA,CHORDATA,MAMMALIA,RODENTIA,MURIDAE,Gerbillus,Gerbillus hesperinus,"Cabrera, 1936",NA,EN,Western Gerbil,9128
+ANIMALIA,CHORDATA,MAMMALIA,RODENTIA,MURIDAE,Gerbillus,Gerbillus hoogstraali,"Lay, 1975",NA,VU,Hoogstraal's Gerbil,9129
+ANIMALIA,CHORDATA,MAMMALIA,RODENTIA,MURIDAE,Gerbillus,Gerbillus occiduus,"Lay, 1975",NA,DD,Occidental Gerbil,9138
+ANIMALIA,CHORDATA,MAMMALIA,RODENTIA,MURIDAE,Gerbillus,Gerbillus perpallidus,"Setzer, 1958",NA,LC,Pale Gerbil,9140
+ANIMALIA,CHORDATA,MAMMALIA,RODENTIA,MURIDAE,Gerbillus,Gerbillus tarabuli,"Thomas, 1902",NA,LC,Tarabul's Gerbil,9153
+ANIMALIA,CHORDATA,MAMMALIA,CETARTIODACTYLA,DELPHINIDAE,Globicephala,Globicephala macrorhynchus,"Gray, 1846",NA,LC,Short-finned Pilot Whale,9249
+ANIMALIA,CHORDATA,MAMMALIA,CETARTIODACTYLA,DELPHINIDAE,Globicephala,Globicephala melas,"(Traill, 1809)",NA,LC,Long-finned Pilot Whale,9250
+ANIMALIA,CHORDATA,MAMMALIA,CETARTIODACTYLA,DELPHINIDAE,Grampus,Grampus griseus,"(G. Cuvier, 1812)",NA,LC,Risso's Dolphin,9461
+ANIMALIA,CHORDATA,MAMMALIA,CARNIVORA,PHOCIDAE,Halichoerus,Halichoerus grypus,"(Fabricius, 1791)",NA,LC,Grey Seal,9660
+ANIMALIA,CHORDATA,MAMMALIA,CETARTIODACTYLA,HIPPOPOTAMIDAE,Hippopotamus,Hippopotamus amphibius,"Linnaeus, 1758",NA,VU,Hippopotamus,10103
+ANIMALIA,CHORDATA,MAMMALIA,CARNIVORA,HYAENIDAE,Parahyaena,Parahyaena brunnea,"(Thunberg, 1820)",NA,NT,Brown Hyaena,10276
+ANIMALIA,CHORDATA,MAMMALIA,SIRENIA,DUGONGIDAE,Hydrodamalis,Hydrodamalis gigas,"(Zimmermann, 1780)",NA,EX,Steller's Sea Cow,10303
+ANIMALIA,CHORDATA,MAMMALIA,RODENTIA,MURIDAE,Hydromys,Hydromys chrysogaster,"É. Geoffroy Saint-Hilaire, 1804",NA,LC,Common Water Rat,10310
+ANIMALIA,CHORDATA,MAMMALIA,CETARTIODACTYLA,CERVIDAE,Hydropotes,Hydropotes inermis,"Swinhoe, 1870",NA,VU,Water Deer,10329
+ANIMALIA,CHORDATA,MAMMALIA,CARNIVORA,PHOCIDAE,Hydrurga,Hydrurga leptonyx,"(de Blainville, 1820)",NA,LC,Leopard Seal,10340
+ANIMALIA,CHORDATA,MAMMALIA,CETARTIODACTYLA,ZIPHIIDAE,Hyperoodon,Hyperoodon ampullatus,"(Forster, 1770)",NA,NT,Northern Bottlenose Whale,10707
+ANIMALIA,CHORDATA,MAMMALIA,CETARTIODACTYLA,ZIPHIIDAE,Hyperoodon,Hyperoodon planifrons,"Flower, 1882",NA,LC,Southern Bottlenose Whale,10708
+ANIMALIA,CHORDATA,MAMMALIA,RODENTIA,DIPODIDAE,Jaculus,Jaculus orientalis,"Erxleben, 1777",NA,LC,Greater Egyptian Jerboa,10913
+ANIMALIA,CHORDATA,MAMMALIA,CETARTIODACTYLA,KOGIIDAE,Kogia,Kogia breviceps,"(Blainville, 1838)",NA,LC,Pygmy Sperm Whale,11047
+ANIMALIA,CHORDATA,MAMMALIA,CETARTIODACTYLA,KOGIIDAE,Kogia,Kogia sima,"(Owen, 1866)",NA,LC,Dwarf Sperm Whale,11048
+ANIMALIA,CHORDATA,MAMMALIA,CETARTIODACTYLA,DELPHINIDAE,Lagenodelphis,Lagenodelphis hosei,"Fraser, 1956",NA,LC,Fraser's Dolphin,11140
+ANIMALIA,CHORDATA,MAMMALIA,CETARTIODACTYLA,DELPHINIDAE,Lagenorhynchus,Lagenorhynchus acutus,"(Gray, 1828)",NA,LC,Atlantic White-sided Dolphin,11141
+ANIMALIA,CHORDATA,MAMMALIA,CETARTIODACTYLA,DELPHINIDAE,Lagenorhynchus,Lagenorhynchus albirostris,"(Gray, 1846)",NA,LC,White-beaked Dolphin,11142
+ANIMALIA,CHORDATA,MAMMALIA,CETARTIODACTYLA,DELPHINIDAE,Lagenorhynchus,Lagenorhynchus australis,"(Peale, 1848)",NA,LC,Peale's Dolphin,11143
+ANIMALIA,CHORDATA,MAMMALIA,CETARTIODACTYLA,DELPHINIDAE,Lagenorhynchus,Lagenorhynchus cruciger,"(Quoy & Gaimard, 1824)",NA,LC,Hourglass Dolphin,11144
+ANIMALIA,CHORDATA,MAMMALIA,CETARTIODACTYLA,DELPHINIDAE,Lagenorhynchus,Lagenorhynchus obliquidens,"Gill, 1865",NA,LC,Pacific White-sided Dolphin,11145
+ANIMALIA,CHORDATA,MAMMALIA,CETARTIODACTYLA,DELPHINIDAE,Lagenorhynchus,Lagenorhynchus obscurus,"(Gray, 1828)",NA,LC,Dusky Dolphin,11146
+ANIMALIA,CHORDATA,MAMMALIA,CARNIVORA,PHOCIDAE,Leptonychotes,Leptonychotes weddellii,"(Lesson, 1826)",NA,LC,Weddell Seal,11696
+ANIMALIA,CHORDATA,MAMMALIA,LAGOMORPHA,LEPORIDAE,Lepus,Lepus flavigularis,"Wagner, 1844",NA,EN,Tehuantepec Jackrabbit,11790
+ANIMALIA,CHORDATA,MAMMALIA,LAGOMORPHA,LEPORIDAE,Lepus,Lepus insularis,"W. Bryant, 1891",NA,VU,Black Jackrabbit,11794
+ANIMALIA,CHORDATA,MAMMALIA,CETARTIODACTYLA,DELPHINIDAE,Lissodelphis,Lissodelphis borealis,"(Peale, 1848)",NA,LC,Northern Right Whale Dolphin,12125
+ANIMALIA,CHORDATA,MAMMALIA,CETARTIODACTYLA,DELPHINIDAE,Lissodelphis,Lissodelphis peronii,"(Lacépède, 1804)",NA,LC,Southern Right Whale Dolphin,12126
+ANIMALIA,CHORDATA,MAMMALIA,CARNIVORA,PHOCIDAE,Lobodon,Lobodon carcinophaga,"(Hombron & Jacquinot, 1842)",NA,LC,Crabeater Seal,12246
+ANIMALIA,CHORDATA,MAMMALIA,CARNIVORA,MUSTELIDAE,Lontra,Lontra canadensis,"(Schreber, 1777)",NA,LC,North American River Otter,12302
+ANIMALIA,CHORDATA,MAMMALIA,CARNIVORA,MUSTELIDAE,Lontra,Lontra felina,"(Molina, 1782)",NA,EN,Marine Otter,12303
+ANIMALIA,CHORDATA,MAMMALIA,CARNIVORA,MUSTELIDAE,Lontra,Lontra longicaudis,"(Olfers, 1818)",NA,NT,Neotropical Otter,12304
+ANIMALIA,CHORDATA,MAMMALIA,CARNIVORA,MUSTELIDAE,Lontra,Lontra provocax,"(Thomas, 1908)",NA,EN,Southern River Otter,12305
+ANIMALIA,CHORDATA,MAMMALIA,CARNIVORA,MUSTELIDAE,Lutra,Lutra lutra,"(Linnaeus, 1758)",NA,NT,Eurasian Otter,12419
+ANIMALIA,CHORDATA,MAMMALIA,CARNIVORA,MUSTELIDAE,Hydrictis,Hydrictis maculicollis,"(Lichtenstein, 1835)",NA,NT,Spotted-necked Otter,12420
+ANIMALIA,CHORDATA,MAMMALIA,CARNIVORA,MUSTELIDAE,Lutra,Lutra sumatrana,"(Gray, 1865)",NA,EN,Hairy-nosed Otter,12421
+ANIMALIA,CHORDATA,MAMMALIA,CARNIVORA,MUSTELIDAE,Lutrogale,Lutrogale perspicillata,"(I. Geoffroy Saint-Hilaire, 1826)",NA,VU,Smooth-coated Otter,12427
+ANIMALIA,CHORDATA,MAMMALIA,CETARTIODACTYLA,BALAENOPTERIDAE,Megaptera,Megaptera novaeangliae,"(Borowski, 1781)",NA,LC,Humpback Whale,13006
+ANIMALIA,CHORDATA,MAMMALIA,CETARTIODACTYLA,ZIPHIIDAE,Mesoplodon,Mesoplodon bidens,"(Sowerby, 1804)",NA,LC,Sowerby's Beaked Whale,13241
+ANIMALIA,CHORDATA,MAMMALIA,CETARTIODACTYLA,ZIPHIIDAE,Mesoplodon,Mesoplodon bowdoini,"Andrews, 1908",NA,DD,Andrew's Beaked Whale,13242
+ANIMALIA,CHORDATA,MAMMALIA,CETARTIODACTYLA,ZIPHIIDAE,Mesoplodon,Mesoplodon carlhubbsi,"Moore, 1963",NA,DD,Hubbs' Beaked Whale,13243
+ANIMALIA,CHORDATA,MAMMALIA,CETARTIODACTYLA,ZIPHIIDAE,Mesoplodon,Mesoplodon densirostris,"(Blainville, 1817)",NA,LC,Blainville's Beaked Whale,13244
+ANIMALIA,CHORDATA,MAMMALIA,CETARTIODACTYLA,ZIPHIIDAE,Mesoplodon,Mesoplodon europaeus,"(Gervais, 1855)",NA,LC,Gervais' Beaked Whale,13245
+ANIMALIA,CHORDATA,MAMMALIA,CETARTIODACTYLA,ZIPHIIDAE,Mesoplodon,Mesoplodon grayi,"Von Haast, 1876",NA,LC,Gray's Beaked Whale,13247
+ANIMALIA,CHORDATA,MAMMALIA,CETARTIODACTYLA,ZIPHIIDAE,Mesoplodon,Mesoplodon hectori,"(Gray, 1871)",NA,DD,Hector's Beaked Whale,13248
+ANIMALIA,CHORDATA,MAMMALIA,CETARTIODACTYLA,ZIPHIIDAE,Mesoplodon,Mesoplodon layardii,"(Gray, 1865)",NA,LC,Strap-toothed Whale,13249
+ANIMALIA,CHORDATA,MAMMALIA,CETARTIODACTYLA,ZIPHIIDAE,Mesoplodon,Mesoplodon mirus,"True, 1913",NA,LC,True's Beaked Whale,13250
+ANIMALIA,CHORDATA,MAMMALIA,CETARTIODACTYLA,ZIPHIIDAE,Mesoplodon,Mesoplodon peruvianus,"Reyes, Mead &amp; Van Waerebeek, 1991",NA,LC,Pygmy Beaked Whale,13251
+ANIMALIA,CHORDATA,MAMMALIA,CETARTIODACTYLA,ZIPHIIDAE,Mesoplodon,Mesoplodon stejnegeri,"True, 1885",NA,NT,Stejneger's Beaked Whale,13252
+ANIMALIA,CHORDATA,MAMMALIA,RODENTIA,CRICETIDAE,Microtus,Microtus breweri,"(Baird, 1858)",NA,VU,Beach Vole,13417
+ANIMALIA,CHORDATA,MAMMALIA,CARNIVORA,PHOCIDAE,Mirounga,Mirounga angustirostris,"(Gill, 1866)",NA,LC,Northern Elephant Seal,13581
+ANIMALIA,CHORDATA,MAMMALIA,CARNIVORA,PHOCIDAE,Mirounga,Mirounga leonina,"(Linnaeus, 1758)",NA,LC,Southern Elephant Seal,13583
+ANIMALIA,CHORDATA,MAMMALIA,CARNIVORA,PHOCIDAE,Monachus,Monachus monachus,"(Hermann, 1779)",NA,EN,Mediterranean Monk Seal,13653
+ANIMALIA,CHORDATA,MAMMALIA,CARNIVORA,PHOCIDAE,Neomonachus,Neomonachus schauinslandi,"(Matschie, 1905)",NA,EN,Hawaiian Monk Seal,13654
+ANIMALIA,CHORDATA,MAMMALIA,CARNIVORA,PHOCIDAE,Neomonachus,Neomonachus tropicalis,"(Gray, 1850)",NA,EX,Caribbean Monk Seal,13655
+ANIMALIA,CHORDATA,MAMMALIA,CETARTIODACTYLA,MONODONTIDAE,Monodon,Monodon monoceros,"Linnaeus, 1758",NA,LC,Narwhal,13704
+ANIMALIA,CHORDATA,MAMMALIA,RODENTIA,MURIDAE,Mus,Mus macedonicus,"Petrov &amp; Ruzic, 1983",NA,LC,Macedonian Mouse,13966
+ANIMALIA,CHORDATA,MAMMALIA,RODENTIA,MURIDAE,Mus,Mus musculus,"Linnaeus, 1758",NA,LC,House Mouse,13972
+ANIMALIA,CHORDATA,MAMMALIA,CARNIVORA,OTARIIDAE,Neophoca,Neophoca cinerea,"(Péron, 1816)",NA,EN,Australian Sea Lion,14549
+ANIMALIA,CHORDATA,MAMMALIA,RODENTIA,CRICETIDAE,Neotoma,Neotoma bryanti ssp. anthonyi,"J.A. Allen, 1898",NA,EX,Anthony's Woodrat,14576
+ANIMALIA,CHORDATA,MAMMALIA,RODENTIA,CRICETIDAE,Neotoma,Neotoma bryanti ssp. martinensis,"Goldman, 1905",NA,EX,San Martin Island Woodrat,14580
+ANIMALIA,CHORDATA,MAMMALIA,CARNIVORA,ODOBENIDAE,Odobenus,Odobenus rosmarus,"(Linnaeus, 1758)",NA,VU,Walrus,15106
+ANIMALIA,CHORDATA,MAMMALIA,CARNIVORA,ODOBENIDAE,Odobenus,Odobenus rosmarus ssp. rosmarus,"(Linnaeus, 1758)",NA,NT,Atlantic Walrus,15108
+ANIMALIA,CHORDATA,MAMMALIA,CARNIVORA,PHOCIDAE,Ommatophoca,Ommatophoca rossii,"(Gray, 1844)",NA,LC,Ross Seal,15269
+ANIMALIA,CHORDATA,MAMMALIA,CETARTIODACTYLA,DELPHINIDAE,Orcaella,Orcaella brevirostris,"(Owen in Gray, 1866)",NA,EN,Irrawaddy Dolphin,15419
+ANIMALIA,CHORDATA,MAMMALIA,CETARTIODACTYLA,DELPHINIDAE,Orcinus,Orcinus orca,"(Linnaeus, 1758)",NA,DD,Killer Whale,15421
+ANIMALIA,CHORDATA,MAMMALIA,RODENTIA,GEOMYIDAE,Orthogeomys,Orthogeomys hispidus,"(Le Conte, 1852)",NA,LC,Hispid Pocket Gopher,15549
+ANIMALIA,CHORDATA,MAMMALIA,CETARTIODACTYLA,DELPHINIDAE,Peponocephala,Peponocephala electra,"(Gray, 1846)",NA,LC,Melon-headed Whale,16564
+ANIMALIA,CHORDATA,MAMMALIA,RODENTIA,CRICETIDAE,Peromyscus,Peromyscus pseudocrinitus,"Burt, 1932",NA,CR,Coronados Deer Mouse,16687
+ANIMALIA,CHORDATA,MAMMALIA,CARNIVORA,PHOCIDAE,Phoca,Phoca vitulina,"Linnaeus, 1758",NA,LC,Harbor Seal,17013
+ANIMALIA,CHORDATA,MAMMALIA,CARNIVORA,PHOCIDAE,Phoca,Phoca vitulina ssp. stejnegeri,"J. Allen, 1902",NA,DD,Kuril Seal,17014
+ANIMALIA,CHORDATA,MAMMALIA,CARNIVORA,PHOCIDAE,Phoca,Phoca vitulina ssp. vitulina,"Linnaeus, 1758",NA,LC,Eastern Atlantic Harbour Seal,17020
+ANIMALIA,CHORDATA,MAMMALIA,CARNIVORA,PHOCIDAE,Phoca,Phoca vitulina ssp. concolor,"DeKay, 1842",NA,LC,Western Atlantic Harbor Seal,17021
+ANIMALIA,CHORDATA,MAMMALIA,CARNIVORA,PHOCIDAE,Phoca,Phoca vitulina ssp. richardii,"(Gray, 1864)",NA,LC,North Pacific Harbor Seal,17022
+ANIMALIA,CHORDATA,MAMMALIA,CARNIVORA,PHOCIDAE,Phoca,Phoca largha,"(Pallas, 1811)",NA,LC,Spotted Seal,17023
+ANIMALIA,CHORDATA,MAMMALIA,CARNIVORA,OTARIIDAE,Phocarctos,Phocarctos hookeri,"(Gray, 1844)",NA,EN,New Zealand Sea Lion,17026
+ANIMALIA,CHORDATA,MAMMALIA,CETARTIODACTYLA,PHOCOENIDAE,Phocoena,Phocoena phocoena,"(Linnaeus, 1758)",NA,LC,Harbor Porpoise,17027
+ANIMALIA,CHORDATA,MAMMALIA,CETARTIODACTYLA,PHOCOENIDAE,Phocoena,Phocoena sinus,"Norris &amp; McFarland, 1958",NA,CR,Vaquita,17028
+ANIMALIA,CHORDATA,MAMMALIA,CETARTIODACTYLA,PHOCOENIDAE,Phocoena,Phocoena spinipinnis,"Burmeister, 1865",NA,NT,Burmeister's Porpoise,17029
+ANIMALIA,CHORDATA,MAMMALIA,CETARTIODACTYLA,PHOCOENIDAE,Phocoena,Phocoena phocoena ssp. relicta,"Abel, 1905",NA,EN,Black Sea Harbour Porpoise,17030
+ANIMALIA,CHORDATA,MAMMALIA,CETARTIODACTYLA,PHOCOENIDAE,Phocoena,Phocoena phocoena,"(Linnaeus, 1758)",Baltic Sea subpopulation,CR,Harbour Porpoise,17031
+ANIMALIA,CHORDATA,MAMMALIA,CETARTIODACTYLA,PHOCOENIDAE,Phocoenoides,Phocoenoides dalli,"(True, 1885)",NA,LC,Dall's Porpoise,17032
+ANIMALIA,CHORDATA,MAMMALIA,CHIROPTERA,VESPERTILIONIDAE,Pipistrellus,Pipistrellus abramus,"(Temminck, 1838)",NA,LC,Japanese Pipistrelle,17320
+ANIMALIA,CHORDATA,MAMMALIA,CETARTIODACTYLA,PONTOPORIIDAE,Pontoporia,Pontoporia blainvillei,"(Gervais &amp; d'Orbigny, 1844)",NA,VU,Franciscana,17978
+ANIMALIA,CHORDATA,MAMMALIA,CETARTIODACTYLA,DELPHINIDAE,Pseudorca,Pseudorca crassidens,"(Owen, 1846)",NA,NT,False Killer Whale,18596
+ANIMALIA,CHORDATA,MAMMALIA,CARNIVORA,MUSTELIDAE,Pteronura,Pteronura brasiliensis,"(Gmelin, 1788)",NA,EN,Giant Otter,18711
+ANIMALIA,CHORDATA,MAMMALIA,RODENTIA,MURIDAE,Rattus,Rattus exulans,"(Peale, 1848)",NA,LC,Polynesian Rat,19330
+ANIMALIA,CHORDATA,MAMMALIA,RODENTIA,CRICETIDAE,Reithrodontomys,Reithrodontomys raviventris,"Dixon, 1908",NA,EN,Salt-marsh Harvest Mouse,19401
+ANIMALIA,CHORDATA,MAMMALIA,EULIPOTYPHLA,SORICIDAE,Sorex,Sorex pribilofensis,"Merriam, 1895",NA,EN,Pribilof Island Shrew,20391
+ANIMALIA,CHORDATA,MAMMALIA,CETARTIODACTYLA,DELPHINIDAE,Sousa,Sousa teuszii,"(Kükenthal, 1892)",NA,CR,Atlantic Humpback Dolphin,20425
+ANIMALIA,CHORDATA,MAMMALIA,RODENTIA,OCTODONTIDAE,Spalacopus,Spalacopus cyanus,"(Molina, 1782)",NA,LC,Coruro,20427
+ANIMALIA,CHORDATA,MAMMALIA,CETARTIODACTYLA,DELPHINIDAE,Stenella,Stenella attenuata,"(Gray, 1846)",NA,LC,Pantropical Spotted Dolphin,20729
+ANIMALIA,CHORDATA,MAMMALIA,CETARTIODACTYLA,DELPHINIDAE,Stenella,Stenella clymene,"(Gray, 1846)",NA,LC,Clymene Dolphin,20730
+ANIMALIA,CHORDATA,MAMMALIA,CETARTIODACTYLA,DELPHINIDAE,Stenella,Stenella coeruleoalba,"(Meyen, 1833)",NA,LC,Striped Dolphin,20731
+ANIMALIA,CHORDATA,MAMMALIA,CETARTIODACTYLA,DELPHINIDAE,Stenella,Stenella frontalis,"(G. Cuvier, 1829)",NA,LC,Atlantic Spotted Dolphin,20732
+ANIMALIA,CHORDATA,MAMMALIA,CETARTIODACTYLA,DELPHINIDAE,Stenella,Stenella longirostris,"(Gray, 1828)",NA,LC,Spinner Dolphin,20733
+ANIMALIA,CHORDATA,MAMMALIA,CETARTIODACTYLA,DELPHINIDAE,Steno,Steno bredanensis,"(Lesson, 1828)",NA,LC,Rough-toothed Dolphin,20738
+ANIMALIA,CHORDATA,MAMMALIA,CHIROPTERA,EMBALLONURIDAE,Taphozous,Taphozous australis,"Gould, 1854",NA,NT,Coastal Sheath-tailed Bat,21452
+ANIMALIA,CHORDATA,MAMMALIA,CETARTIODACTYLA,ZIPHIIDAE,Tasmacetus,Tasmacetus shepherdi,"Oliver, 1937",NA,DD,Shepherd's Beaked Whale,21500
+ANIMALIA,CHORDATA,MAMMALIA,SIRENIA,TRICHECHIDAE,Trichechus,Trichechus manatus,"Linnaeus, 1758",NA,VU,American Manatee,22103
+ANIMALIA,CHORDATA,MAMMALIA,SIRENIA,TRICHECHIDAE,Trichechus,Trichechus senegalensis,"Link, 1795",NA,VU,African Manatee,22104
+ANIMALIA,CHORDATA,MAMMALIA,SIRENIA,TRICHECHIDAE,Trichechus,Trichechus manatus ssp. manatus,"Linnaeus, 1758",NA,EN,Caribbean Manatee,22105
+ANIMALIA,CHORDATA,MAMMALIA,CETARTIODACTYLA,DELPHINIDAE,Tursiops,Tursiops truncatus,"(Montagu, 1821)",NA,LC,Common Bottlenose Dolphin,22563
+ANIMALIA,CHORDATA,MAMMALIA,CARNIVORA,CANIDAE,Urocyon,Urocyon littoralis,"(Baird, 1857)",NA,NT,Island Fox,22781
+ANIMALIA,CHORDATA,MAMMALIA,CARNIVORA,URSIDAE,Ursus,Ursus maritimus,"Phipps, 1774",NA,VU,Polar Bear,22823
+ANIMALIA,CHORDATA,MAMMALIA,CHIROPTERA,VESPERTILIONIDAE,Vespertilio,Vespertilio sinensis,"(Peters, 1880)",NA,LC,Asian Particolored Bat,22949
+ANIMALIA,CHORDATA,MAMMALIA,RODENTIA,MURIDAE,Xeromys,Xeromys myoides,"Thomas, 1889",NA,VU,Water Mouse,23141
+ANIMALIA,CHORDATA,MAMMALIA,CETARTIODACTYLA,ZIPHIIDAE,Ziphius,Ziphius cavirostris,"G. Cuvier, 1823",NA,LC,Cuvier's Beaked Whale,23211
+ANIMALIA,CHORDATA,MAMMALIA,EULIPOTYPHLA,SORICIDAE,Crocidura,Crocidura suaveolens,"(Pallas, 1811)",NA,LC,Lesser Shrew,29656
+ANIMALIA,CHORDATA,MAMMALIA,EULIPOTYPHLA,SORICIDAE,Neomys,Neomys fodiens,"(Pennant, 1771)",NA,LC,Eurasian Water Shrew,29658
+ANIMALIA,CHORDATA,MAMMALIA,EULIPOTYPHLA,SORICIDAE,Sorex,Sorex minutus,"Linnaeus, 1766",NA,LC,Eurasian Pygmy Shrew,29667
+ANIMALIA,CHORDATA,MAMMALIA,CETARTIODACTYLA,ZIPHIIDAE,Indopacetus,Indopacetus pacificus,"(Longman, 1926)",NA,LC,Indo-pacific Beaked Whale,40635
+ANIMALIA,CHORDATA,MAMMALIA,CARNIVORA,MUSTELIDAE,Neovison,Neovison macrodon,"(Prentis, 1903)",NA,EX,Sea Mink,40784
+ANIMALIA,CHORDATA,MAMMALIA,LAGOMORPHA,LEPORIDAE,Sylvilagus,Sylvilagus palustris,"(Bachman, 1837)",NA,LC,Marsh Rabbit,41303
+ANIMALIA,CHORDATA,MAMMALIA,EULIPOTYPHLA,SORICIDAE,Crocidura,Crocidura whitakeri,"De Winton, 1898",NA,LC,Whitaker's Shrew,41366
+ANIMALIA,CHORDATA,MAMMALIA,EULIPOTYPHLA,TALPIDAE,Scapanus,Scapanus orarius,"True, 1896",NA,LC,Coast Mole,41474
+ANIMALIA,CHORDATA,MAMMALIA,EULIPOTYPHLA,TALPIDAE,Talpa,Talpa stankovici,"V. Martino &amp; E. Martino, 1931",NA,LC,Balkan Mole,41485
+ANIMALIA,CHORDATA,MAMMALIA,CARNIVORA,CANIDAE,Vulpes,Vulpes zerda,"(Zimmermann, 1780)",NA,LC,Fennec Fox,41588
+ANIMALIA,CHORDATA,MAMMALIA,CARNIVORA,HERPESTIDAE,Atilax,Atilax paludinosus,"(G.[Baron] Cuvier, 1829)",NA,LC,Marsh Mongoose,41590
+ANIMALIA,CHORDATA,MAMMALIA,CARNIVORA,MUSTELIDAE,Mustela,Mustela putorius,"Linnaeus, 1758",NA,LC,Western Polecat,41658
+ANIMALIA,CHORDATA,MAMMALIA,CARNIVORA,OTARIIDAE,Arctocephalus,Arctocephalus forsteri,"(Lesson, 1828)",NA,LC,New Zealand Fur Seal,41664
+ANIMALIA,CHORDATA,MAMMALIA,CARNIVORA,OTARIIDAE,Otaria,Otaria byronia,"(de Blainville, 1820)",NA,LC,South American Sea Lion,41665
+ANIMALIA,CHORDATA,MAMMALIA,CARNIVORA,OTARIIDAE,Zalophus,Zalophus californianus,"(Lesson, 1828)",NA,LC,Californian Sea Lion,41666
+ANIMALIA,CHORDATA,MAMMALIA,CARNIVORA,OTARIIDAE,Zalophus,Zalophus japonicus,"(Peters, 1866)",NA,EX,Japanese Sea Lion,41667
+ANIMALIA,CHORDATA,MAMMALIA,CARNIVORA,OTARIIDAE,Zalophus,Zalophus wollebaeki,"Sivertsen, 1953",NA,EN,Galápagos Sea Lion,41668
+ANIMALIA,CHORDATA,MAMMALIA,CARNIVORA,PHOCIDAE,Histriophoca,Histriophoca fasciata,"(Zimmerman, 1783)",NA,LC,Ribbon Seal,41670
+ANIMALIA,CHORDATA,MAMMALIA,CARNIVORA,PHOCIDAE,Pagophilus,Pagophilus groenlandicus,"(Erxleben, 1777)",NA,LC,Harp Seal,41671
+ANIMALIA,CHORDATA,MAMMALIA,CARNIVORA,PHOCIDAE,Pusa,Pusa hispida,"(Schreber, 1775)",NA,LC,Ringed Seal,41672
+ANIMALIA,CHORDATA,MAMMALIA,CARNIVORA,PHOCIDAE,Pusa,Pusa hispida ssp. botnica,"(Gmelin, 1788)",NA,LC,Baltic Ringed Seal,41673
+ANIMALIA,CHORDATA,MAMMALIA,CARNIVORA,PHOCIDAE,Pusa,Pusa hispida ssp. ochotensis,"(Pallas, 1811)",NA,LC,Okhotsk Sea Ringed Seal,41677
+ANIMALIA,CHORDATA,MAMMALIA,CETARTIODACTYLA,BALAENIDAE,Eubalaena,Eubalaena japonica,"(Lacépède, 1818)",NA,EN,North Pacific Right Whale,41711
+ANIMALIA,CHORDATA,MAMMALIA,CETARTIODACTYLA,BALAENIDAE,Eubalaena,Eubalaena glacialis,"(Müller, 1776)",NA,CR,North Atlantic Right Whale,41712
+ANIMALIA,CHORDATA,MAMMALIA,CETARTIODACTYLA,BALAENOPTERIDAE,Balaenoptera,Balaenoptera musculus ssp. intermedia,"Burmeister, 1871",NA,CR,Antarctic Blue Whale,41713
+ANIMALIA,CHORDATA,MAMMALIA,CETARTIODACTYLA,DELPHINIDAE,Tursiops,Tursiops aduncus,"(Ehrenberg, 1833)",NA,NT,Indo-Pacific Bottlenose Dolphin,41714
+ANIMALIA,CHORDATA,MAMMALIA,CETARTIODACTYLA,PHOCOENIDAE,Phocoena,Phocoena dioptrica,"(Lahille, 1912)",NA,LC,Spectacled Porpoise,41715
+ANIMALIA,CHORDATA,MAMMALIA,CETARTIODACTYLA,PHOCOENIDAE,Neophocaena,Neophocaena asiaeorientalis,"(Pilleri &amp; Gihr, 1972)",NA,EN,Narrow-ridged Finless Porpoise,41754
+ANIMALIA,CHORDATA,MAMMALIA,CETARTIODACTYLA,PHYSETERIDAE,Physeter,Physeter macrocephalus,"Linnaeus, 1758",NA,VU,Sperm Whale,41755
+ANIMALIA,CHORDATA,MAMMALIA,CETARTIODACTYLA,ZIPHIIDAE,Mesoplodon,Mesoplodon perrini,"Dalebout, Mead, Baker, Baker &amp; van Helden, 2002",NA,EN,Perrin's Beaked Whale,41759
+ANIMALIA,CHORDATA,MAMMALIA,CETARTIODACTYLA,ZIPHIIDAE,Mesoplodon,Mesoplodon traversii,"(Gray, 1874)",NA,DD,Spade-toothed Whale,41760
+ANIMALIA,CHORDATA,MAMMALIA,CETARTIODACTYLA,PONTOPORIIDAE,Pontoporia,Pontoporia blainvillei,"(Gervais &amp; d'Orbigny, 1844)",Rio Grande do Sul/Uruguay subpopulation,VU,Franciscana,41761
+ANIMALIA,CHORDATA,MAMMALIA,CETARTIODACTYLA,DELPHINIDAE,Delphinus,Delphinus delphis,"Linnaeus, 1758",Mediterranean subpopulation,EN,Common Dolphin,41762
+ANIMALIA,CHORDATA,MAMMALIA,RODENTIA,SCIURIDAE,Ictidomys,Ictidomys tridecemlineatus,"Mitchill, 1821",NA,LC,Thirteen-lined Ground Squirrel,42564
+ANIMALIA,CHORDATA,MAMMALIA,RODENTIA,CRICETIDAE,Peromyscus,Peromyscus gossypinus,"(Le Conte, 1853)",NA,LC,Key Largo Cotton Mouse,42653
+ANIMALIA,CHORDATA,MAMMALIA,RODENTIA,CRICETIDAE,Peromyscus,Peromyscus polionotus,"(Wagner, 1843)",NA,LC,Choctawhatchee Beach Mouse,42654
+ANIMALIA,CHORDATA,MAMMALIA,RODENTIA,CRICETIDAE,Oryzomys,Oryzomys palustris,"(Harlan, 1837)",NA,LC,Marsh Rice Rat,42675
+ANIMALIA,CHORDATA,MAMMALIA,CARNIVORA,MUSTELIDAE,Aonyx,Aonyx cinereus,"(Illiger, 1815)",NA,VU,Asian Small-clawed Otter,44166
+ANIMALIA,CHORDATA,MAMMALIA,CETARTIODACTYLA,DELPHINIDAE,Orcaella,Orcaella brevirostris,"(Owen in Gray, 1866)",Malampaya Sound subpopulation,CR,Irrawaddy Dolphin,44187
+ANIMALIA,CHORDATA,MAMMALIA,CETARTIODACTYLA,MONODONTIDAE,Delphinapterus,Delphinapterus leucas,"(Pallas, 1776)",Cook Inlet subpopulation,CR,Beluga,61442
+ANIMALIA,CHORDATA,MAMMALIA,CETARTIODACTYLA,BALAENOPTERIDAE,Megaptera,Megaptera novaeangliae,"(Borowski, 1781)",Oceania subpopulation,EN,Humpback Whale,132832
+ANIMALIA,CHORDATA,MAMMALIA,CETARTIODACTYLA,BALAENOPTERIDAE,Megaptera,Megaptera novaeangliae,"(Borowski, 1781)",Arabian Sea subpopulation,EN,Humpback Whale,132835
+ANIMALIA,CHORDATA,MAMMALIA,CETARTIODACTYLA,BALAENIDAE,Eubalaena,Eubalaena australis,"(Desmoulins, 1822)",Chile-Peru subpopulation,CR,Southern Right Whale Chile-Peru Subpopulation,133704
+ANIMALIA,CHORDATA,MAMMALIA,CETARTIODACTYLA,BALAENIDAE,Eubalaena,Eubalaena japonica,"(Lacépède, 1818)",Northeast Pacific subpopulation,CR,North Pacific Right Whale Northeast Pacific Subpopulation,133706
+ANIMALIA,CHORDATA,MAMMALIA,CETARTIODACTYLA,DELPHINIDAE,Sousa,Sousa chinensis ssp. taiwanensis,"(Osbeck, 1765)",NA,CR,Taiwanese Humpback Dolphin,133710
+ANIMALIA,CHORDATA,MAMMALIA,CETARTIODACTYLA,DELPHINIDAE,Stenella,Stenella longirostris ssp. orientalis,Perrin 1990,NA,VU,Eastern Spinner Dolphin,133712
+ANIMALIA,CHORDATA,MAMMALIA,CETARTIODACTYLA,DELPHINIDAE,Tursiops,Tursiops truncatus ssp. ponticus,"Barabash-Nikiforov, 1940",NA,EN,Black Sea Bottlenose Dolphin,133714
+ANIMALIA,CHORDATA,MAMMALIA,RODENTIA,CRICETIDAE,Peromyscus,Peromyscus keeni,"(Rhoades, 1894)",NA,LC,Northwestern Deermouse,135164
+ANIMALIA,CHORDATA,MAMMALIA,CETARTIODACTYLA,DELPHINIDAE,Orcaella,Orcaella heinsohni,"Beasley, Robertson &amp; Arnold, 2005",NA,VU,Australian Snubfin Dolphin,136315
+ANIMALIA,CHORDATA,MAMMALIA,RODENTIA,CTENOMYIDAE,Ctenomys,Ctenomys flamarioni,"Travi, 1981",NA,EN,Tuco-tuco of the Dunes,136464
+ANIMALIA,CHORDATA,MAMMALIA,RODENTIA,GLIRIDAE,Eliomys,Eliomys munbyanus,"(Pomel, 1856)",NA,LC,NA,136469
+ANIMALIA,CHORDATA,MAMMALIA,RODENTIA,CTENOMYIDAE,Ctenomys,Ctenomys lami,"Freitas, 2001",NA,VU,NA,136567
+ANIMALIA,CHORDATA,MAMMALIA,CETARTIODACTYLA,BALAENOPTERIDAE,Balaenoptera,Balaenoptera omurai,"Wada, Oishi &amp; Yamada, 2003",NA,DD,Omura’s Whale,136623
+ANIMALIA,CHORDATA,MAMMALIA,RODENTIA,CTENOMYIDAE,Ctenomys,Ctenomys rionegrensis,"Langguth &amp; Abella, 1970",NA,EN,NA,136635
+ANIMALIA,CHORDATA,MAMMALIA,CHIROPTERA,MOLOSSIDAE,Tadarida,Tadarida insignis,"Blyth, 1862",NA,DD,East Asian Free-tailed Bat,136716
+ANIMALIA,CHORDATA,MAMMALIA,CETARTIODACTYLA,DELPHINIDAE,Sotalia,Sotalia guianensis,"(Van Bénéden, 1864)",NA,NT,Guiana Dolphin,181359
+ANIMALIA,CHORDATA,MAMMALIA,CETARTIODACTYLA,DELPHINIDAE,Tursiops,Tursiops truncatus,"(Montagu, 1821)",Fiordland subpopulation,CR,Fiordland Bottlenose Dolphin,194300
+ANIMALIA,CHORDATA,MAMMALIA,CETARTIODACTYLA,PHOCOENIDAE,Neophocaena,Neophocaena phocaenoides,"(G. Cuvier, 1829)",NA,VU,Indo-Pacific Finless Porpoise,198920
+ANIMALIA,CHORDATA,MAMMALIA,CETARTIODACTYLA,BALAENOPTERIDAE,Balaenoptera,Balaenoptera physalus,"(Linnaeus, 1758)",Mediterranean subpopulation,EN,Fin Whale,16208224
+ANIMALIA,CHORDATA,MAMMALIA,CETARTIODACTYLA,DELPHINIDAE,Tursiops,Tursiops truncatus,"(Montagu, 1821)",Mediterranean subpopulation,LC,Common Bottlenose Dolphin,16369383
+ANIMALIA,CHORDATA,MAMMALIA,CETARTIODACTYLA,PHYSETERIDAE,Physeter,Physeter macrocephalus,"Linnaeus, 1758",Mediterranean subpopulation,EN,Sperm Whale,16370739
+ANIMALIA,CHORDATA,MAMMALIA,CETARTIODACTYLA,DELPHINIDAE,Grampus,Grampus griseus,"(G. Cuvier, 1812)",Mediterranean subpopulation,EN,Risso’s Dolphin,16378423
+ANIMALIA,CHORDATA,MAMMALIA,CETARTIODACTYLA,ZIPHIIDAE,Ziphius,Ziphius cavirostris,"G. Cuvier, 1823",Mediterranean subpopulation,VU,Cuvier’s Beaked Whale,16381144
+ANIMALIA,CHORDATA,MAMMALIA,CETARTIODACTYLA,DELPHINIDAE,Stenella,Stenella coeruleoalba,"(Meyen, 1833)",Mediterranean subpopulation,LC,Striped Dolphin,16674437
+ANIMALIA,CHORDATA,MAMMALIA,CARNIVORA,OTARIIDAE,Eumetopias,Eumetopias jubatus ssp. monteriensis,"(Schreber, 1776)",NA,LC,Loughlin’s Steller Sea Lion,17345844
+ANIMALIA,CHORDATA,MAMMALIA,CARNIVORA,OTARIIDAE,Eumetopias,Eumetopias jubatus ssp. jubatus,"(Schreber, 1776)",NA,EN,Western Steller Sea Lion,17367725
+ANIMALIA,CHORDATA,MAMMALIA,CARNIVORA,PHOCIDAE,Halichoerus,Halichoerus grypus ssp. grypus,"(Fabricius, 1791)",NA,LC,Northwest Atlantic Grey Seal,61382004
+ANIMALIA,CHORDATA,MAMMALIA,CARNIVORA,PHOCIDAE,Halichoerus,Halichoerus grypus ssp. macrorhynchus,"Hornschuh &amp; Schilling, 1851",NA,LC,Northeast Atlantic Grey Seal,61382025
+ANIMALIA,CHORDATA,MAMMALIA,CARNIVORA,PHOCIDAE,Pusa,Pusa hispida ssp. hispida,"(Schreber, 1775)",NA,LC,Ringed Seal,61382318
+ANIMALIA,CHORDATA,MAMMALIA,CARNIVORA,ODOBENIDAE,Odobenus,Odobenus rosmarus ssp. divergens,"(Illiger, 1815)",NA,DD,Pacific Walrus,61963499
+ANIMALIA,CHORDATA,MAMMALIA,CARNIVORA,MUSTELIDAE,Mustela,Mustela nivalis,"Linnaeus, 1766",NA,LC,Least Weasel,70207409
+ANIMALIA,CHORDATA,MAMMALIA,CARNIVORA,OTARIIDAE,Arctocephalus,Arctocephalus australis,"(Zimmermann, 1783)",Peruvian/Northern Chilean subpopulation,VU,Peruvian Fur Seal,72050476
+ANIMALIA,CHORDATA,MAMMALIA,CARNIVORA,PHOCIDAE,Halichoerus,Halichoerus grypus,"(Fabricius, 1791)",Baltic Sea subpopulation,LC,Baltic Grey Seal,74491261
+ANIMALIA,CHORDATA,MAMMALIA,CETARTIODACTYLA,DELPHINIDAE,Sousa,Sousa chinensis,"(Osbeck, 1765)",NA,VU,Indo-Pacific Humpback Dolphin,82031425
+ANIMALIA,CHORDATA,MAMMALIA,CETARTIODACTYLA,DELPHINIDAE,Sousa,Sousa plumbea,"(G. Cuvier, 1829)",NA,EN,Indian Ocean Humpback Dolphin,82031633
+ANIMALIA,CHORDATA,MAMMALIA,CETARTIODACTYLA,DELPHINIDAE,Sousa,Sousa sahulensis,"Jefferson &amp; Rosenbaum, 2014",NA,VU,Australian Humpback Dolphin,82031667
+ANIMALIA,CHORDATA,MAMMALIA,CHIROPTERA,VESPERTILIONIDAE,Myotis,Myotis daubentonii,"(Kuhl, 1817)",NA,LC,Daubenton's Myotis,85342710
+ANIMALIA,CHORDATA,MAMMALIA,RODENTIA,CRICETIDAE,Neotoma,Neotoma bryanti,"Merriam, 1887",NA,LC,Bryant's Woodrat,117189944
+ANIMALIA,CHORDATA,MAMMALIA,CETARTIODACTYLA,BALAENOPTERIDAE,Balaenoptera,Balaenoptera edeni,"Rosel &amp; Wilcox, 2014",Gulf of Mexico subpopulation,CR,Gulf of Mexico Whale,117636167
+ANIMALIA,CHORDATA,MAMMALIA,CARNIVORA,PHOCIDAE,Monachus,Monachus monachus,"(Hermann, 1779)",Eastern Mediterranean subpopulation,EN,Mediterranean Monk Seal Eastern Mediterranean Subpopulation,120868935
+ANIMALIA,CHORDATA,MAMMALIA,CETARTIODACTYLA,DELPHINIDAE,Orcaella,Orcaella brevirostris,"(Owen in Gray, 1866)",Iloilo-Guimaras Subpopulation,CR,Irrawaddy Dolphin Iloilo-Guimaras subpopulation,123095978
+ANIMALIA,CHORDATA,MAMMALIA,CETARTIODACTYLA,ZIPHIIDAE,Mesoplodon,Mesoplodon hotaula,"Deraniyagala, 1963",NA,DD,Deraniyagala's Beaked Whale,127826787
+ANIMALIA,CHORDATA,MAMMALIA,CETARTIODACTYLA,ZIPHIIDAE,Mesoplodon,Mesoplodon ginkgodens,"Nishiwaki &amp; Kamiya, 1958",NA,DD,Ginkgo-toothed Beaked Whale,127827012
+ANIMALIA,CHORDATA,MAMMALIA,CETARTIODACTYLA,DELPHINIDAE,Orcinus,Orcinus orca,"(Linnaeus, 1758)",Strait of Gibraltar subpopulation,CR,Killer Whale,132948040
+ANIMALIA,CHORDATA,MAMMALIA,CETARTIODACTYLA,DELPHINIDAE,Delphinus,Delphinus delphis,"Linnaeus, 1758",NA,LC,Common Dolphin,134817215
+ANIMALIA,CHORDATA,MAMMALIA,CETARTIODACTYLA,DELPHINIDAE,Lagenorhynchus,Lagenorhynchus obscurus ssp. posidonia,"(Philippi, 1893)",NA,VU,Peruvian Dusky Dolphin,134820643
+ANIMALIA,CHORDATA,MAMMALIA,CETARTIODACTYLA,DELPHINIDAE,Tursiops,Tursiops truncatus ssp. gephyreus,"Lahille, 1908",NA,VU,Lahille’s Bottlenose Dolphin,134822416
+ANIMALIA,CHORDATA,MAMMALIA,CETARTIODACTYLA,DELPHINIDAE,Delphinus,Delphinus delphis,"Linnaeus, 1758",Gulf of Corinth subpopulation,CR,Common Dolphin,156206333
+ANIMALIA,CHORDATA,MAMMALIA,SIRENIA,DUGONGIDAE,Dugong,Dugong dugon,"(Müller, 1776)",Nansei subpopulation,CR,Dugong,157011948
+ANIMALIA,CHORDATA,MAMMALIA,CETARTIODACTYLA,DELPHINIDAE,Steno,Steno bredanensis,"(Lesson, 1828)",Mediterranean subpopulation,NT,Rough-toothed Dolphin,160158217
+ANIMALIA,CHORDATA,MAMMALIA,CETARTIODACTYLA,ZIPHIIDAE,Berardius,Berardius minimus,"Yamada, Kitamura &amp; Matsuishi, 2019",NA,NT,Sato’s Beaked Whale,178756893
+ANIMALIA,CHORDATA,MAMMALIA,CETARTIODACTYLA,DELPHINIDAE,Tursiops,Tursiops truncatus,"(Montagu, 1821)",Gulf of Ambracia subpopulation,CR,Common Bottlenose Dolphin,181208820
+ANIMALIA,CHORDATA,MAMMALIA,CETARTIODACTYLA,DELPHINIDAE,Delphinus,Delphinus delphis,"Linnaeus, 1758",Inner Mediterranean subpopulation,EN,Common Dolphin,189865869
+ANIMALIA,CHORDATA,MAMMALIA,CETARTIODACTYLA,DELPHINIDAE,Globicephala,Globicephala melas,"(Traill, 1809)",Inner Mediterranean subpopulation,EN,Long-finned Pilot Whale,198785664
+ANIMALIA,CHORDATA,MAMMALIA,CETARTIODACTYLA,DELPHINIDAE,Globicephala,Globicephala melas,"(Traill, 1809)",Strait of Gibraltar subpopulation,CR,Long-Finned Pilot Whale,198787290

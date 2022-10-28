@@ -1,0 +1,124 @@
+SpeciesID,SpecCode,Genus,Species,FBname,OccurCells,Kingdom,Phylum,Class,Order,Family,iucn_id,iucn_code,iucn_version
+ITS-Mam-771132,81384,Orcaella,heinsohni,Australian snubfin dolphin,83,Animalia,Chordata,Mammalia,Cetacea,Delphinidae,136315,VU,2020-2
+ITS-Mam-770889,131338,Balaenoptera,omurai,NA,23,Animalia,Chordata,Mammalia,Cetacea,Balaenopteridae,136623,DD,2020-2
+ITS-Mam-770938,152260,Sotalia,guianensis,NA,29,Animalia,Chordata,Mammalia,Cetacea,Delphinidae,181359,NT,2020-2
+SLB-190161,155857,Tursiops,australis,Burrunan dolphin,11,Animalia,Chordata,Mammalia,Cetacea,Delphinidae,NA,N.E.,2020-2
+ITS-Mam-180547,69195,Enhydra,lutris,sea otter,215,Animalia,Chordata,Mammalia,Carnivora,Mustelidae,7750,EN,2020-2
+ITS-Mam-621916,71068,Lutra,lutra,Eurasian river otter,724,Animalia,Chordata,Mammalia,Carnivora,Mustelidae,12419,NT,2020-2
+ITS-Mam-180639,68962,Odobenus,rosmarus,walrus,738,Animalia,Chordata,Mammalia,Carnivora,Odobenidae,15106,VU,2020-2
+ITS-Mam-180633,68958,Arctocephalus,australis,South American fur seal,116,Animalia,Chordata,Mammalia,Carnivora,Otariidae,2055,LC,2020-2
+ITS-Mam-180631,68956,Arctocephalus,forsteri,New Zealand fur seal,348,Animalia,Chordata,Mammalia,Carnivora,Otariidae,41664,LC,2020-2
+ITS-Mam-180634,68959,Arctocephalus,galapagoensis,Galapagos fur seal,27,Animalia,Chordata,Mammalia,Carnivora,Otariidae,2057,EN,2020-2
+ITS-Mam-180630,68955,Arctocephalus,gazella,Antarctic fur seal,770,Animalia,Chordata,Mammalia,Carnivora,Otariidae,2058,LC,2020-2
+ITS-Mam-180636,68961,Arctocephalus,townsendi,Guadalupe fur seal,54,Animalia,Chordata,Mammalia,Carnivora,Otariidae,2061,LC,2020-2
+ITS-Mam-180632,68957,Arctocephalus,tropicalis,Subantarctic fur seal,82,Animalia,Chordata,Mammalia,Carnivora,Otariidae,2062,LC,2020-2
+ITS-Mam-180627,69422,Callorhinus,ursinus,northern fur seal,462,Animalia,Chordata,Mammalia,Carnivora,Otariidae,3590,VU,2020-2
+ITS-Mam-180625,69421,Eumetopias,jubatus,Steller's sea lion,305,Animalia,Chordata,Mammalia,Carnivora,Otariidae,8239,NT,2020-2
+ITS-Mam-180623,69420,Neophoca,cinerea,Australian sea lion,199,Animalia,Chordata,Mammalia,Carnivora,Otariidae,14549,EN,2020-2
+ITS-Mam-180619,69418,Otaria,flavescens,South American sea lion,271,Animalia,Chordata,Mammalia,Carnivora,Otariidae,41665,LC,2020-2
+ITS-Mam-180617,69417,Phocarctos,hookeri,Hooker's sea lion,55,Animalia,Chordata,Mammalia,Carnivora,Otariidae,17026,EN,2020-2
+ITS-Mam-180621,69419,Zalophus,californianus,California sea lion,342,Animalia,Chordata,Mammalia,Carnivora,Otariidae,41666,LC,2020-2
+ITS-Mam-622014,71164,Zalophus,wollebaeki,Galapagos sea lion,30,Animalia,Chordata,Mammalia,Carnivora,Otariidae,41668,EN,2020-2
+ITS-Mam-180657,68967,Cystophora,cristata,hooded seal,166,Animalia,Chordata,Mammalia,Carnivora,Phocidae,6204,VU,2020-2
+ITS-Mam-180655,68966,Erignathus,barbatus,bearded seal,598,Animalia,Chordata,Mammalia,Carnivora,Phocidae,8010,LC,2020-2
+ITS-Mam-180653,68965,Halichoerus,grypus,grey seal,957,Animalia,Chordata,Mammalia,Carnivora,Phocidae,9660,LC,2020-2
+ITS-Mam-622021,71168,Histriophoca,fasciata,ribbon seal,78,Animalia,Chordata,Mammalia,Carnivora,Phocidae,41670,LC,2020-2
+ITS-Mam-180667,69573,Hydrurga,leptonyx,leopard seal,366,Animalia,Chordata,Mammalia,Carnivora,Phocidae,10340,LC,2020-2
+ITS-Mam-180669,69574,Leptonychotes,weddellii,Weddell seal,384,Animalia,Chordata,Mammalia,Carnivora,Phocidae,11696,LC,2020-2
+ITS-Mam-622023,71170,Lobodon,carcinophaga,crabeater seal,2095,Animalia,Chordata,Mammalia,Carnivora,Phocidae,12246,LC,2020-2
+ITS-Mam-180672,69576,Mirounga,angustirostris,northern elephant seal,1940,Animalia,Chordata,Mammalia,Carnivora,Phocidae,13581,LC,2020-2
+ITS-Mam-180671,69575,Mirounga,leonina,southern elephant seal,10918,Animalia,Chordata,Mammalia,Carnivora,Phocidae,13583,LC,2020-2
+ITS-Mam-180659,69569,Monachus,monachus,Mediterranean monk seal,67,Animalia,Chordata,Mammalia,Carnivora,Phocidae,13653,EN,2020-2
+ITS-Mam-180661,69571,Monachus,schauinslandi,Hawaiian monk seal,30,Animalia,Chordata,Mammalia,Carnivora,Phocidae,13654,EN,2020-2
+ITS-Mam-180665,69572,Ommatophoca,rossii,ross seal,206,Animalia,Chordata,Mammalia,Carnivora,Phocidae,15269,LC,2020-2
+ITS-Mam-622022,71169,Pagophilus,groenlandicus,harp seal,341,Animalia,Chordata,Mammalia,Carnivora,Phocidae,41671,LC,2020-2
+ITS-Mam-180642,68963,Phoca,largha,larga seal,169,Animalia,Chordata,Mammalia,Carnivora,Phocidae,17023,LC,2020-2
+ITS-Mam-180649,68964,Phoca,vitulina,Harbour seal,1192,Animalia,Chordata,Mammalia,Carnivora,Phocidae,17013,LC,2020-2
+ITS-Mam-622018,71165,Pusa,hispida,ringed seal,803,Animalia,Chordata,Mammalia,Carnivora,Phocidae,41672,LC,2020-2
+ITS-Mam-180533,69009,Balaena,mysticetus,bowhead whale,1445,Animalia,Chordata,Mammalia,Cetacea,Balaenidae,2467,LC,2020-2
+ITS-Mam-552771,69826,Eubalaena,australis,southern right whale,4689,Animalia,Chordata,Mammalia,Cetacea,Balaenidae,8153,LC,2020-2
+ITS-Mam-180537,69191,Eubalaena,glacialis,North Atlantic right whale,249,Animalia,Chordata,Mammalia,Cetacea,Balaenidae,41712,CR,2020-2
+ITS-Mam-612591,70931,Eubalaena,japonica,North Pacific right whale,1572,Animalia,Chordata,Mammalia,Cetacea,Balaenidae,41711,EN,2020-2
+ITS-Mam-180524,69003,Balaenoptera,acutorostrata,northern minke whale,2754,Animalia,Chordata,Mammalia,Cetacea,Balaenopteridae,2474,LC,2020-2
+ITS-Mam-612592,70932,Balaenoptera,bonaerensis,Antarctic minke whale,521,Animalia,Chordata,Mammalia,Cetacea,Balaenopteridae,2480,NT,2020-2
+ITS-Mam-180526,69005,Balaenoptera,borealis,sei whale,1407,Animalia,Chordata,Mammalia,Cetacea,Balaenopteridae,2475,EN,2020-2
+ITS-Mam-612597,70936,Balaenoptera,brydei,Bryde's whale,85,Animalia,Chordata,Mammalia,Cetacea,Balaenopteridae,NA,N.E.,2020-2
+ITS-Mam-180525,69004,Balaenoptera,edeni,Eden's whale,619,Animalia,Chordata,Mammalia,Cetacea,Balaenopteridae,2476,LC,2020-2
+ITS-Mam-180528,69007,Balaenoptera,musculus,blue whale,2700,Animalia,Chordata,Mammalia,Cetacea,Balaenopteridae,2477,EN,2020-2
+ITS-Mam-180527,69006,Balaenoptera,physalus,fin whale,4378,Animalia,Chordata,Mammalia,Cetacea,Balaenopteridae,2478,VU,2020-2
+ITS-Mam-180530,69008,Megaptera,novaeangliae,humpback whale,4984,Animalia,Chordata,Mammalia,Cetacea,Balaenopteridae,13006,LC,2020-2
+ITS-Mam-180449,69389,Cephalorhynchus,commersonii,Commerson's dolphin,165,Animalia,Chordata,Mammalia,Cetacea,Delphinidae,4159,LC,2020-2
+ITS-Mam-180450,69390,Cephalorhynchus,eutropia,black dolphin,11,Animalia,Chordata,Mammalia,Cetacea,Delphinidae,4160,NT,2020-2
+ITS-Mam-180451,69391,Cephalorhynchus,heavisidii,Heaviside's dolphin,31,Animalia,Chordata,Mammalia,Cetacea,Delphinidae,4161,NT,2020-2
+ITS-Mam-180452,69392,Cephalorhynchus,hectori,Hector's dolphin,26,Animalia,Chordata,Mammalia,Cetacea,Delphinidae,4162,EN,2020-2
+ITS-Mam-555654,69832,Delphinus,capensis,long-beaked common dolphin,122,Animalia,Chordata,Mammalia,Cetacea,Delphinidae,6337,DD,2020-2
+ITS-Mam-180438,69381,Delphinus,delphis,common dolphin,3469,Animalia,Chordata,Mammalia,Cetacea,Delphinidae,6336,LC,2020-2
+ITS-Mam-180461,69397,Feresa,attenuata,pygmy killer whale,477,Animalia,Chordata,Mammalia,Cetacea,Delphinidae,8551,LC,2020-2
+ITS-Mam-180466,69399,Globicephala,macrorhynchus,short-finned pilot whale,1272,Animalia,Chordata,Mammalia,Cetacea,Delphinidae,9249,LC,2020-2
+ITS-Mam-552461,69721,Globicephala,melas,long-finned pilot whale,1624,Animalia,Chordata,Mammalia,Cetacea,Delphinidae,9250,LC,2020-2
+ITS-Mam-180457,69395,Grampus,griseus,Risso's dolphin,2126,Animalia,Chordata,Mammalia,Cetacea,Delphinidae,9461,LC,2020-2
+ITS-Mam-180440,69382,Lagenodelphis,hosei,Fraser's dolphin,427,Animalia,Chordata,Mammalia,Cetacea,Delphinidae,11140,LC,2020-2
+ITS-Mam-180443,69384,Lagenorhynchus,acutus,Atlantic white-sided dolphin,853,Animalia,Chordata,Mammalia,Cetacea,Delphinidae,11141,LC,2020-2
+ITS-Mam-180442,69383,Lagenorhynchus,albirostris,white-beaked dolphin,718,Animalia,Chordata,Mammalia,Cetacea,Delphinidae,11142,LC,2020-2
+ITS-Mam-180446,69387,Lagenorhynchus,australis,Peale's dolphin,162,Animalia,Chordata,Mammalia,Cetacea,Delphinidae,11143,LC,2020-2
+ITS-Mam-180447,69388,Lagenorhynchus,cruciger,hourglass dolphin,224,Animalia,Chordata,Mammalia,Cetacea,Delphinidae,11144,LC,2020-2
+ITS-Mam-180444,69385,Lagenorhynchus,obliquidens,Pacific white-sided dolphin,336,Animalia,Chordata,Mammalia,Cetacea,Delphinidae,11145,LC,2020-2
+ITS-Mam-180445,69386,Lagenorhynchus,obscurus,dusky dolphin,238,Animalia,Chordata,Mammalia,Cetacea,Delphinidae,11146,LC,2020-2
+ITS-Mam-180454,69393,Lissodelphis,borealis,Northern right whale dolphin,232,Animalia,Chordata,Mammalia,Cetacea,Delphinidae,12125,LC,2020-2
+ITS-Mam-180455,69394,Lissodelphis,peronii,Southern right whale dolphin,79,Animalia,Chordata,Mammalia,Cetacea,Delphinidae,12126,LC,2020-2
+ITS-Mam-180471,69401,Orcaella,brevirostris,Irrawaddy dolphin,36,Animalia,Chordata,Mammalia,Cetacea,Delphinidae,15419,EN,2020-2
+ITS-Mam-180469,69400,Orcinus,orca,killer whale,2396,Animalia,Chordata,Mammalia,Cetacea,Delphinidae,15421,DD,2020-2
+ITS-Mam-180459,69396,Peponocephala,electra,melon-headed whale,500,Animalia,Chordata,Mammalia,Cetacea,Delphinidae,16564,LC,2020-2
+ITS-Mam-180463,69398,Pseudorca,crassidens,false killer whale,910,Animalia,Chordata,Mammalia,Cetacea,Delphinidae,18596,NT,2020-2
+ITS-Mam-180422,69375,Sotalia,fluviatilis,tucuxi,38,Animalia,Chordata,Mammalia,Cetacea,Delphinidae,NA,N.E.,2020-2
+ITS-Mam-180420,69374,Sousa,teuszii,Atlantic hump-backed dolphin,37,Animalia,Chordata,Mammalia,Cetacea,Delphinidae,20425,CR,2020-2
+ITS-Mam-180430,69378,Stenella,attenuata,Pantropical spotted dolphin,2557,Animalia,Chordata,Mammalia,Cetacea,Delphinidae,20729,LC,2020-2
+ITS-Mam-180435,69380,Stenella,clymene,Clymene dolphin,222,Animalia,Chordata,Mammalia,Cetacea,Delphinidae,20730,LC,2020-2
+ITS-Mam-180434,69379,Stenella,coeruleoalba,striped dolphin,2994,Animalia,Chordata,Mammalia,Cetacea,Delphinidae,20731,LC,2020-2
+ITS-Mam-552460,69720,Stenella,frontalis,Atlantic spotted dolphin,661,Animalia,Chordata,Mammalia,Cetacea,Delphinidae,20732,LC,2020-2
+ITS-Mam-180429,69377,Stenella,longirostris,spinner dolphin,1930,Animalia,Chordata,Mammalia,Cetacea,Delphinidae,20733,LC,2020-2
+ITS-Mam-180417,69372,Steno,bredanensis,rough-toothed dolphin,976,Animalia,Chordata,Mammalia,Cetacea,Delphinidae,20738,LC,2020-2
+ITS-Mam-612596,70935,Tursiops,aduncus,Indo-Pacific bottlenose dolphin,225,Animalia,Chordata,Mammalia,Cetacea,Delphinidae,41714,NT,2020-2
+ITS-Mam-180426,69376,Tursiops,truncatus,bottlenose dolphin,3701,Animalia,Chordata,Mammalia,Cetacea,Delphinidae,22563,LC,2020-2
+ITS-Mam-180521,69002,Eschrichtius,robustus,gray whale,403,Animalia,Chordata,Mammalia,Cetacea,Eschrichtiidae,8097,LC,2020-2
+ITS-Mam-180411,69370,Pontoporia,blainvillei,franciscana,43,Animalia,Chordata,Mammalia,Cetacea,Iniidae,17978,VU,2020-2
+ITS-Mam-180491,68883,Kogia,breviceps,pygmy sperm whale,696,Animalia,Chordata,Mammalia,Cetacea,Kogiidae,11047,LC,2020-2
+ITS-Mam-180492,68884,Kogia,sima,dwarf sperm whale,757,Animalia,Chordata,Mammalia,Cetacea,Kogiidae,11048,LC,2020-2
+ITS-Mam-180483,69408,Delphinapterus,leucas,beluga,635,Animalia,Chordata,Mammalia,Cetacea,Monodontidae,6335,LC,2020-2
+ITS-Mam-180485,69409,Monodon,monoceros,narwhal,55,Animalia,Chordata,Mammalia,Cetacea,Monodontidae,13704,LC,2020-2
+ITS-Mam-180535,69010,Caperea,marginata,pygmy right whale,81,Animalia,Chordata,Mammalia,Cetacea,Neobalaenidae,3778,LC,2020-2
+ITS-Mam-180478,69406,Neophocaena,phocaenoides,finless porpoise,67,Animalia,Chordata,Mammalia,Cetacea,Phocoenidae,198920,VU,2020-2
+ITS-Mam-180475,69404,Phocoena,dioptrica,spectacled porpoise,49,Animalia,Chordata,Mammalia,Cetacea,Phocoenidae,41715,LC,2020-2
+ITS-Mam-180473,69402,Phocoena,phocoena,harbour porpoise,1934,Animalia,Chordata,Mammalia,Cetacea,Phocoenidae,17027,LC,2020-2
+ITS-Mam-180474,69403,Phocoena,sinus,vaquita,11,Animalia,Chordata,Mammalia,Cetacea,Phocoenidae,17028,CR,2020-2
+ITS-Mam-180476,69405,Phocoena,spinipinnis,Burmeister's porpoise,45,Animalia,Chordata,Mammalia,Cetacea,Phocoenidae,17029,NT,2020-2
+ITS-Mam-180480,69407,Phocoenoides,dalli,Dall's porpoise,935,Animalia,Chordata,Mammalia,Cetacea,Phocoenidae,17032,LC,2020-2
+ITS-Mam-180495,68885,Berardius,arnuxii,Arnoux's beaked whale,66,Animalia,Chordata,Mammalia,Cetacea,Ziphiidae,2762,DD,2020-2
+ITS-Mam-180496,68886,Berardius,bairdii,Baird's beaked whale,141,Animalia,Chordata,Mammalia,Cetacea,Ziphiidae,2763,DD,2020-2
+ITS-Mam-180504,68890,Hyperoodon,ampullatus,North Atlantic bottlenose whale,401,Animalia,Chordata,Mammalia,Cetacea,Ziphiidae,10707,DD,2020-2
+ITS-Mam-180505,68891,Hyperoodon,planifrons,Southern bottlenose whale,162,Animalia,Chordata,Mammalia,Cetacea,Ziphiidae,10708,LC,2020-2
+ITS-Mam-180502,68889,Indopacetus,pacificus,longman's beaked whale,57,Animalia,Chordata,Mammalia,Cetacea,Ziphiidae,40635,DD,2020-2
+ITS-Mam-180515,68999,Mesoplodon,bidens,Sowerby's beaked whale,208,Animalia,Chordata,Mammalia,Cetacea,Ziphiidae,13241,DD,2020-2
+ITS-Mam-180513,68997,Mesoplodon,bowdoini,Andrew's beaked whale,30,Animalia,Chordata,Mammalia,Cetacea,Ziphiidae,13242,DD,2020-2
+ITS-Mam-180512,68996,Mesoplodon,carlhubbsi,Hubb's beaked whale,36,Animalia,Chordata,Mammalia,Cetacea,Ziphiidae,13243,DD,2020-2
+ITS-Mam-180517,69001,Mesoplodon,densirostris,Blainville's beaked whale,527,Animalia,Chordata,Mammalia,Cetacea,Ziphiidae,13244,DD,2020-2
+ITS-Mam-180509,68894,Mesoplodon,europaeus,Gervais' beaked whale,213,Animalia,Chordata,Mammalia,Cetacea,Ziphiidae,13245,DD,2020-2
+ITS-Mam-180510,68895,Mesoplodon,ginkgodens,ginkgo-toothed beaked whale,33,Animalia,Chordata,Mammalia,Cetacea,Ziphiidae,13246,DD,2020-2
+ITS-Mam-180511,68896,Mesoplodon,grayi,Gray's beaked whale,98,Animalia,Chordata,Mammalia,Cetacea,Ziphiidae,13247,DD,2020-2
+ITS-Mam-180507,68892,Mesoplodon,hectori,Hector's beaked whale,40,Animalia,Chordata,Mammalia,Cetacea,Ziphiidae,13248,DD,2020-2
+ITS-Mam-180516,69000,Mesoplodon,layardii,strap-toothed whale,142,Animalia,Chordata,Mammalia,Cetacea,Ziphiidae,13249,DD,2020-2
+ITS-Mam-180508,68893,Mesoplodon,mirus,True's beaked whale,65,Animalia,Chordata,Mammalia,Cetacea,Ziphiidae,13250,DD,2020-2
+ITS-Mam-552772,69827,Mesoplodon,peruvianus,pygmy beaked whale,47,Animalia,Chordata,Mammalia,Cetacea,Ziphiidae,13251,DD,2020-2
+ITS-Mam-180514,68998,Mesoplodon,stejnegeri,Stejneger's beaked whale,74,Animalia,Chordata,Mammalia,Cetacea,Ziphiidae,13252,DD,2020-2
+ITS-Mam-180500,68888,Tasmacetus,shepherdi,Shepherd's beaked whale,51,Animalia,Chordata,Mammalia,Cetacea,Ziphiidae,21500,DD,2020-2
+ITS-Mam-180498,68887,Ziphius,cavirostris,Cuvier's beaked whale,1381,Animalia,Chordata,Mammalia,Cetacea,Ziphiidae,23211,LC,2020-2
+ITS-Mam-180679,69577,Dugong,dugon,dugong,362,Animalia,Chordata,Mammalia,Sirenia,Dugongidae,6909,VU,2020-2
+ITS-Mam-180681,69578,Hydrodamalis,gigas,Steller's sea cow,19,Animalia,Chordata,Mammalia,Sirenia,Dugongidae,10303,EX,2020-2
+ITS-Mam-180684,69579,Trichechus,manatus,West Indian manatee,150,Animalia,Chordata,Mammalia,Sirenia,Trichechidae,22103,VU,2020-2
+ITS-Mam-180488,68882,Physeter,macrocephalus,sperm whale,19181,Animalia,Chordata,Mammalia,Cetacea,Physeteridae,41755,VU,2020-2
+ITS-Mam-180629,68954,Arctocephalus,pusillus,South African fur seal,184,Animalia,Chordata,Mammalia,Carnivora,Otariidae,2060,LC,2020-2
+ITS-Mam-726283,100091,Neovison,macrodon,sea mink,8,Animalia,Chordata,Mammalia,Carnivora,Mustelidae,40784,EX,2020-2
+SLB-185785,153753,Neophocaena,asiaeorientalis,NA,5,Animalia,Chordata,Mammalia,Cetacea,Phocoenidae,41754,EN,2020-2
+ITS-Mam-180635,68960,Arctocephalus,philippii,Juan Fernandez fur seal,5,Animalia,Chordata,Mammalia,Carnivora,Otariidae,2059,LC,2020-2
+ITS-Mam-612599,71025,Mesoplodon,perrini,Perrin's beaked whale,7,Animalia,Chordata,Mammalia,Cetacea,Ziphiidae,41759,DD,2020-2
+ITS-Mam-612598,88923,Mesoplodon,traversii,spade-toothed beaked whale,7,Animalia,Chordata,Mammalia,Cetacea,Ziphiidae,41760,DD,2020-2

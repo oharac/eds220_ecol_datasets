@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-0.9.649">
+<meta name="generator" content="quarto-1.0.36">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Untitled</title>
+<title>Exploring some ecological datasets</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -90,7 +90,17 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <link href="ecological_data_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="ecological_data_files/libs/bootstrap/bootstrap.min.js"></script>
 <link href="ecological_data_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="ecological_data_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet">
+<link href="ecological_data_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+
+<script src="ecological_data_files/libs/htmlwidgets-1.5.4/htmlwidgets.js"></script>
+<link href="ecological_data_files/libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet">
+<script src="ecological_data_files/libs/datatables-binding-0.21/datatables.js"></script>
+<script src="ecological_data_files/libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<link href="ecological_data_files/libs/dt-core-1.11.3/css/jquery.dataTables.min.css" rel="stylesheet">
+<link href="ecological_data_files/libs/dt-core-1.11.3/css/jquery.dataTables.extra.css" rel="stylesheet">
+<script src="ecological_data_files/libs/dt-core-1.11.3/js/jquery.dataTables.min.js"></script>
+<link href="ecological_data_files/libs/crosstalk-1.2.0/css/crosstalk.min.css" rel="stylesheet">
+<script src="ecological_data_files/libs/crosstalk-1.2.0/js/crosstalk.min.js"></script>
 
 
 </head>
@@ -103,7 +113,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Untitled</h1>
+<h1 class="title">Exploring some ecological datasets</h1>
 </div>
 
 
@@ -121,8 +131,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <details>
 <summary>Show me the code</summary>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(terra)</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(jsonlite)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(terra) <span class="do">### remotes::install_github('rspatial/terra')</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(sf)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(jsonlite)</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(here)</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(rnaturalearth)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 <section id="overview" class="level1">
@@ -159,98 +172,267 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </section>
 <section id="access-specific-info-on-a-single-species" class="level3">
 <h3 class="anchored" data-anchor-id="access-specific-info-on-a-single-species">Access specific info on a single species</h3>
-<p>Humpback whale is ID # 13006. Let’s find the countries where it can be found!</p>
+<p>Humpback whale is ID # 13006. Let’s find the countries where it can be found! (or try a different taxon ID from the previous step)</p>
 <div class="cell">
 <details>
 <summary>Show me the code</summary>
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>spp_country_endpoint <span class="ot">&lt;-</span> <span class="fu">paste0</span>(iucn_url, <span class="st">'/api/v3/species/countries/id/%s?token=%s'</span>)</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>spp_country_url <span class="ot">&lt;-</span> <span class="fu">sprintf</span>(spp_country_endpoint, <span class="dv">283</span>, iucn_token)</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>spp_country_url <span class="ot">&lt;-</span> <span class="fu">sprintf</span>(spp_country_endpoint, <span class="dv">13006</span>, iucn_token)</span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>spp_ctry <span class="ot">&lt;-</span> jsonlite<span class="sc">::</span><span class="fu">fromJSON</span>(spp_country_url)</span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>spp_ctry_df <span class="ot">&lt;-</span> spp_ctry<span class="sc">$</span>result</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>spp_ctry_df <span class="ot">&lt;-</span> spp_ctry<span class="sc">$</span>result</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>DT<span class="sc">::</span><span class="fu">datatable</span>(spp_ctry_df)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
+<div class="cell-output-display">
+
+<div id="htmlwidget-0611cfa86685d4253a4f" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-0611cfa86685d4253a4f">{"x":{"filter":"none","vertical":false,"data":[["1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20","21","22","23","24","25","26","27","28","29","30","31","32","33","34","35","36","37","38","39","40","41","42","43","44","45","46","47","48","49","50","51","52","53","54","55","56","57","58","59","60","61","62","63","64","65","66","67","68","69","70","71","72","73","74","75","76","77","78","79","80","81","82","83","84","85","86","87","88","89","90","91","92","93","94","95","96","97","98","99","100","101","102","103","104","105","106","107","108","109","110","111","112","113","114","115","116","117","118","119","120","121","122","123","124","125","126","127","128","129","130","131","132","133","134","135","136","137","138","139","140","141","142","143","144","145","146","147","148","149","150","151","152","153","154","155","156","157","158","159","160","161","162","163","164","165"],["AE","AG","AI","AO","AQ","AR","AS","AU","AW","BB","BE","BH","BJ","BL","BM","BN","BQ","BR","BS","BV","BZ","CA","CC","CD","CG","CI","CK","CL","CM","CN","CO","CR","CU","CV","CW","CX","DE","DJ","DK","DM","DO","EC","EG","EH","ES","FJ","FK","FM","FO","FR","GA","GB","GD","GF","GH","GL","GM","GN","GP","GQ","GS","GT","GU","GW","GY","HM","HN","ID","IE","IL","IN","IO","IQ","IR","IS","JM","JO","JP","KE","KI","KM","KN","KP","KR","KW","KY","LC","LK","LR","MA","MF","MG","MH","MP","MQ","MR","MS","MU","MV","MX","MY","MZ","NA","NC","NF","NG","NI","NL","NO","NR","NU","NZ","OM","PA","PE","PF","PG","PH","PK","PM","PN","PR","PT","PW","QA","RE","RU","SA","SB","SC","SE","SG","SH","SJ","SL","SN","SO","SR","ST","SV","SX","TC","TF","TG","TK","TL","TO","TT","TV","TW","TZ","UM","US","UY","VC","VE","VG","VI","VN","VU","WF","WS","YE","YT","ZA"],["United Arab Emirates","Antigua and Barbuda","Anguilla","Angola","Antarctica","Argentina","American Samoa","Australia","Aruba","Barbados","Belgium","Bahrain","Benin","Saint Barthélemy","Bermuda","Brunei Darussalam","Bonaire, Sint Eustatius and Saba","Brazil","Bahamas","Bouvet Island","Belize","Canada","Cocos (Keeling) Islands","Congo, The Democratic Republic of the","Congo","Côte d'Ivoire","Cook Islands","Chile","Cameroon","China","Colombia","Costa Rica","Cuba","Cabo Verde","Curaçao","Christmas Island","Germany","Djibouti","Denmark","Dominica","Dominican Republic","Ecuador","Egypt","Western Sahara","Spain","Fiji","Falkland Islands (Malvinas)","Micronesia, Federated States of ","Faroe Islands","France","Gabon","United Kingdom of Great Britain and Northern Ireland","Grenada","French Guiana","Ghana","Greenland","Gambia","Guinea","Guadeloupe","Equatorial Guinea","South Georgia and the South Sandwich Islands","Guatemala","Guam","Guinea-Bissau","Guyana","Heard Island and McDonald Islands","Honduras","Indonesia","Ireland","Israel","India","British Indian Ocean Territory","Iraq","Iran, Islamic Republic of","Iceland","Jamaica","Jordan","Japan","Kenya","Kiribati","Comoros","Saint Kitts and Nevis","Korea, Democratic People's Republic of","Korea, Republic of","Kuwait","Cayman Islands","Saint Lucia","Sri Lanka","Liberia","Morocco","Saint Martin (French part)","Madagascar","Marshall Islands","Northern Mariana Islands","Martinique","Mauritania","Montserrat","Mauritius","Maldives","Mexico","Malaysia","Mozambique","Namibia","New Caledonia","Norfolk Island","Nigeria","Nicaragua","Netherlands","Norway","Nauru","Niue","New Zealand","Oman","Panama","Peru","French Polynesia","Papua New Guinea","Philippines","Pakistan","Saint Pierre and Miquelon","Pitcairn","Puerto Rico","Portugal","Palau","Qatar","Réunion","Russian Federation","Saudi Arabia","Solomon Islands","Seychelles","Sweden","Singapore","Saint Helena, Ascension and Tristan da Cunha","Svalbard and Jan Mayen","Sierra Leone","Senegal","Somalia","Suriname","Sao Tome and Principe","El Salvador","Sint Maarten (Dutch part)","Turks and Caicos Islands","French Southern Territories","Togo","Tokelau","Timor-Leste","Tonga","Trinidad and Tobago","Tuvalu","Taiwan, Province of China","Tanzania, United Republic of","United States Minor Outlying Islands","United States of America","Uruguay","Saint Vincent and the Grenadines","Venezuela, Bolivarian Republic of","Virgin Islands, British","Virgin Islands, U.S.","Viet Nam","Vanuatu","Wallis and Futuna","Samoa","Yemen","Mayotte","South Africa"],["Extant","Extant","Extant","Extant","Extant","Extant","Extant","Extant","Extant","Extant","Extant","Extant","Extant","Extant","Extant","Extant","Extant","Extant","Extant","Extant","Extant","Extant","Extant","Extant","Extant","Extant","Extant","Extant","Extant","Extant","Extant","Extant","Extant","Extant","Extant","Extant","Extant","Extant","Extant","Extant","Extant","Extant","Extant","Extant","Extant","Extant","Extant","Extant","Extant","Extant","Extant","Extant","Extant","Extant","Extant","Extant","Extant","Extant","Extant","Extant","Extant","Extant","Extant","Extant","Extant","Extant","Extant","Extant","Extant","Extant","Extant","Extant","Extant","Extant","Extant","Extant","Extant","Extant","Extant","Extant","Extant","Extant","Extant","Extant","Extant","Extant","Extant","Extant","Extant","Extant","Extant","Extant","Extant","Extant","Extant","Extant","Extant","Extant","Extant","Extant","Extant","Extant","Extant","Extant","Extant","Extant","Extant","Extant","Extant","Extant","Extant","Extant","Extant","Extant","Extant","Extant","Extant","Extant","Extant","Extant","Extant","Extant","Extant","Extant","Extant","Extant","Extant","Extant","Extant","Extant","Extant","Extant","Extant","Extant","Extant","Extant","Extant","Extant","Extant","Extant","Extant","Extant","Extant","Extant","Extant","Extant","Extant","Extant","Extant","Extant","Extant","Extant","Extant","Extant","Extant","Extant","Extant","Extant","Extant","Extant","Extant","Extant","Extant","Extant","Extant"],["Native","Native","Native","Native","Native","Native","Native","Native","Native","Native","Native","Native","Native","Native","Native","Native","Native","Native","Native","Native","Native","Native","Native","Native","Native","Native","Native","Native","Native","Native","Native","Native","Native","Native","Native","Native","Native","Native","Native","Native","Native","Native","Native","Native","Native","Native","Native","Native","Native","Native","Native","Native","Native","Native","Native","Native","Native","Native","Native","Native","Native","Native","Native","Native","Native","Native","Native","Native","Native","Native","Native","Native","Native","Native","Native","Native","Native","Native","Native","Native","Native","Native","Native","Native","Native","Native","Native","Native","Native","Native","Native","Native","Native","Native","Native","Native","Native","Native","Native","Native","Native","Native","Native","Native","Native","Native","Native","Native","Native","Native","Native","Native","Native","Native","Native","Native","Native","Native","Native","Native","Native","Native","Native","Native","Native","Native","Native","Native","Native","Native","Native","Native","Native","Native","Native","Native","Native","Native","Native","Native","Native","Native","Native","Native","Native","Native","Native","Native","Native","Native","Native","Native","Native","Native","Native","Native","Native","Native","Native","Native","Native","Native","Native","Native","Native"],["Native","Native","Native","Native","Native","Native","Native","Native","Native","Native","Native","Native","Native","Native","Native","Native","Native","Native","Native","Native","Native","Native","Native","Native","Native","Native","Native","Native","Native","Native","Native","Native","Native","Native","Native","Native","Native","Native","Native","Native","Native","Native","Native","Native","Native","Native","Native","Native","Native","Native","Native","Native","Native","Native","Native","Native","Native","Native","Native","Native","Native","Native","Native","Native","Native","Native","Native","Native","Native","Native","Native","Native","Native","Native","Native","Native","Native","Native","Native","Native","Native","Native","Native","Native","Native","Native","Native","Native","Native","Native","Native","Native","Native","Native","Native","Native","Native","Native","Native","Native","Native","Native","Native","Native","Native","Native","Native","Native","Native","Native","Native","Native","Native","Native","Native","Native","Native","Native","Native","Native","Native","Native","Native","Native","Native","Native","Native","Native","Native","Native","Native","Native","Native","Native","Native","Native","Native","Native","Native","Native","Native","Native","Native","Native","Native","Native","Native","Native","Native","Native","Native","Native","Native","Native","Native","Native","Native","Native","Native","Native","Native","Native","Native","Native","Native"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>code<\/th>\n      <th>country<\/th>\n      <th>presence<\/th>\n      <th>origin<\/th>\n      <th>distribution_code<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+</div>
 </div>
 </section>
 </section>
 <section id="worms-api" class="level2">
 <h2 class="anchored" data-anchor-id="worms-api">WoRMS API</h2>
 <p>Now let’s try it with the World Register of Marine Species! https://www.marinespecies.org/rest</p>
-<section id="access-aphiaid-for-a-species-name" class="level3">
-<h3 class="anchored" data-anchor-id="access-aphiaid-for-a-species-name">Access AphiaID for a species name</h3>
+<section id="access-aphiaid-for-a-genus-name" class="level3">
+<h3 class="anchored" data-anchor-id="access-aphiaid-for-a-genus-name">Access AphiaID for a genus name</h3>
+<p>Let’s find the ID for genus Balaenoptera, a group that includes the biggest whales in the oceans.</p>
 <div class="cell">
 <details>
 <summary>Show me the code</summary>
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>worms_url <span class="ot">&lt;-</span> <span class="st">'https://www.marinespecies.org/rest/'</span></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>worms_id_endpoint <span class="ot">&lt;-</span> <span class="fu">paste0</span>(worms_url, <span class="st">'AphiaIDByName/%s'</span>)</span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>worms_id_url <span class="ot">&lt;-</span> <span class="fu">sprintf</span>(worms_id_endpoint, <span class="st">'mola%20mola'</span>)</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>worms_id_url <span class="ot">&lt;-</span> <span class="fu">sprintf</span>(worms_id_endpoint, <span class="st">'balaenoptera'</span>)</span>
 <span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>worms_id <span class="ot">&lt;-</span> jsonlite<span class="sc">::</span><span class="fu">fromJSON</span>(worms_id_url)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-</div>
-</section>
-<section id="access-classification-of-a-species" class="level3">
-<h3 class="anchored" data-anchor-id="access-classification-of-a-species">Access classification of a species</h3>
-<div class="cell">
-<details>
-<summary>Show me the code</summary>
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>worms_class_endpoint <span class="ot">&lt;-</span> <span class="fu">paste0</span>(worms_url, <span class="st">'AphiaClassificationByAphiaID/%s'</span>)</span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>worms_class_url <span class="ot">&lt;-</span> <span class="fu">sprintf</span>(worms_class_endpoint, worms_id)</span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>worms_class <span class="ot">&lt;-</span> jsonlite<span class="sc">::</span><span class="fu">fromJSON</span>(worms_class_url)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 </section>
 <section id="access-children-of-a-genus" class="level3">
 <h3 class="anchored" data-anchor-id="access-children-of-a-genus">Access children of a genus</h3>
+<p>The ID for Balaenoptera is 137013, but it is stored in a variable already. Let’s find the “children”, i.e., the members of the next classification down (genus -&gt; species)</p>
+<div class="cell">
+<details>
+<summary>Show me the code</summary>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>worms_child_endpoint <span class="ot">&lt;-</span> <span class="fu">paste0</span>(worms_url, <span class="st">'AphiaChildrenByAphiaID/%s'</span>)</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>worms_child_url <span class="ot">&lt;-</span> <span class="fu">sprintf</span>(worms_child_endpoint, worms_id)</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>worms_child <span class="ot">&lt;-</span> jsonlite<span class="sc">::</span><span class="fu">fromJSON</span>(worms_child_url)</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>worms_child_acc <span class="ot">&lt;-</span> worms_child <span class="sc">%&gt;%</span></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(status <span class="sc">==</span> <span class="st">'accepted'</span>)</span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>DT<span class="sc">::</span><span class="fu">datatable</span>(worms_child)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+
+<div id="htmlwidget-81c119ab7a77aae25940" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-81c119ab7a77aae25940">{"x":{"filter":"none","vertical":false,"data":[["1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20","21","22","23","24","25","26","27","28","29","30","31","32","33","34","35","36","37","38","39","40","41","42","43","44","45","46","47","48","49","50"],[137087,231415,380436,383744,380447,383658,383657,383659,380433,383660,380444,380507,383661,231405,137088,383662,242603,383745,383663,380441,380427,137089,383664,383665,383666,383746,383667,383668,383669,383670,383671,380432,383672,383747,383673,383674,383675,383676,137090,380449,383748,343896,383677,380448,383678,137091,383749,383679,383681,1576133],["https://www.marinespecies.org/aphia.php?p=taxdetails&amp;id=137087","https://www.marinespecies.org/aphia.php?p=taxdetails&amp;id=231415","https://www.marinespecies.org/aphia.php?p=taxdetails&amp;id=380436","https://www.marinespecies.org/aphia.php?p=taxdetails&amp;id=383744","https://www.marinespecies.org/aphia.php?p=taxdetails&amp;id=380447","https://www.marinespecies.org/aphia.php?p=taxdetails&amp;id=383658","https://www.marinespecies.org/aphia.php?p=taxdetails&amp;id=383657","https://www.marinespecies.org/aphia.php?p=taxdetails&amp;id=383659","https://www.marinespecies.org/aphia.php?p=taxdetails&amp;id=380433","https://www.marinespecies.org/aphia.php?p=taxdetails&amp;id=383660","https://www.marinespecies.org/aphia.php?p=taxdetails&amp;id=380444","https://www.marinespecies.org/aphia.php?p=taxdetails&amp;id=380507","https://www.marinespecies.org/aphia.php?p=taxdetails&amp;id=383661","https://www.marinespecies.org/aphia.php?p=taxdetails&amp;id=231405","https://www.marinespecies.org/aphia.php?p=taxdetails&amp;id=137088","https://www.marinespecies.org/aphia.php?p=taxdetails&amp;id=383662","https://www.marinespecies.org/aphia.php?p=taxdetails&amp;id=242603","https://www.marinespecies.org/aphia.php?p=taxdetails&amp;id=383745","https://www.marinespecies.org/aphia.php?p=taxdetails&amp;id=383663","https://www.marinespecies.org/aphia.php?p=taxdetails&amp;id=380441","https://www.marinespecies.org/aphia.php?p=taxdetails&amp;id=380427","https://www.marinespecies.org/aphia.php?p=taxdetails&amp;id=137089","https://www.marinespecies.org/aphia.php?p=taxdetails&amp;id=383664","https://www.marinespecies.org/aphia.php?p=taxdetails&amp;id=383665","https://www.marinespecies.org/aphia.php?p=taxdetails&amp;id=383666","https://www.marinespecies.org/aphia.php?p=taxdetails&amp;id=383746","https://www.marinespecies.org/aphia.php?p=taxdetails&amp;id=383667","https://www.marinespecies.org/aphia.php?p=taxdetails&amp;id=383668","https://www.marinespecies.org/aphia.php?p=taxdetails&amp;id=383669","https://www.marinespecies.org/aphia.php?p=taxdetails&amp;id=383670","https://www.marinespecies.org/aphia.php?p=taxdetails&amp;id=383671","https://www.marinespecies.org/aphia.php?p=taxdetails&amp;id=380432","https://www.marinespecies.org/aphia.php?p=taxdetails&amp;id=383672","https://www.marinespecies.org/aphia.php?p=taxdetails&amp;id=383747","https://www.marinespecies.org/aphia.php?p=taxdetails&amp;id=383673","https://www.marinespecies.org/aphia.php?p=taxdetails&amp;id=383674","https://www.marinespecies.org/aphia.php?p=taxdetails&amp;id=383675","https://www.marinespecies.org/aphia.php?p=taxdetails&amp;id=383676","https://www.marinespecies.org/aphia.php?p=taxdetails&amp;id=137090","https://www.marinespecies.org/aphia.php?p=taxdetails&amp;id=380449","https://www.marinespecies.org/aphia.php?p=taxdetails&amp;id=383748","https://www.marinespecies.org/aphia.php?p=taxdetails&amp;id=343896","https://www.marinespecies.org/aphia.php?p=taxdetails&amp;id=383677","https://www.marinespecies.org/aphia.php?p=taxdetails&amp;id=380448","https://www.marinespecies.org/aphia.php?p=taxdetails&amp;id=383678","https://www.marinespecies.org/aphia.php?p=taxdetails&amp;id=137091","https://www.marinespecies.org/aphia.php?p=taxdetails&amp;id=383749","https://www.marinespecies.org/aphia.php?p=taxdetails&amp;id=383679","https://www.marinespecies.org/aphia.php?p=taxdetails&amp;id=383681","https://www.marinespecies.org/aphia.php?p=taxdetails&amp;id=1576133"],["Balaenoptera acutorostrata","Balaenoptera acuturostrata","Balaenoptera alba","Balaenoptera andrejewi","Balaenoptera antarctica","Balaenoptera antarctica","Balaenoptera antarctica","Balaenoptera aragous","Balaenoptera arctica","Balaenoptera astrolabe","Balaenoptera australis","Balaenoptera australis","Balaenoptera blythii","Balaenoptera bonaerensis","Balaenoptera borealis","Balaenoptera brasiliensis","Balaenoptera brydei","Balaenoptera caerulescens","Balaenoptera capensis","Balaenoptera carolinae","Balaenoptera davidsoni","Balaenoptera edeni","Balaenoptera eschrichtius","Balaenoptera gibbar","Balaenoptera gigas","Balaenoptera grimmi","Balaenoptera huttoni","Balaenoptera indica","Balaenoptera intermedia","Balaenoptera iwasi","Balaenoptera jubartes","Balaenoptera laticeps","Balaenoptera leucopteron","Balaenoptera maculata","Balaenoptera mediterraneensis","Balaenoptera mediterranensis","Balaenoptera microcephala","Balaenoptera miramaris","Balaenoptera musculus","Balaenoptera musculus","Balaenoptera nigra","Balaenoptera omurai","Balaenoptera patachonica","Balaenoptera patachonicus","Balaenoptera patagonica","Balaenoptera physalus","Balaenoptera punctulata","Balaenoptera quoyii","Balaenoptera racovitzai","Balaenoptera ricei"],["Lacépède, 1804","Lacépède, 1804","Giglioli, 1870","Author?, 1888","Gray, 1846","Temminck, 1841","Temminck, 1841","Farines &amp; Carcasonne, 1829","Temminck, 1841","Pucheran, 1843","Gray, 1846","Lesson, 1828","Anderson, 1879","Burmeister, 1867","Lesson, 1828","Gray, 1846","Olsen, 1913","Lacépède, 1818","A. Smith, 1834","Malm, 1866","Scammon, 1872","Anderson, 1878","Rasch, 1845","Lacépède, 1804","Reinhardt, 1857","Author?, 1888","Gray, 1874","Blyth, 1859","Burmeister, 1871","Gray, 1846","Lacépède, 1804","Gray, 1846","Lesson, 1842","Lacépède, 1818","Lesson, 1828","Cabrera, 1961","Gray, 1850","Lahille, 1898","(Linnaeus, 1758)","Van Beneden &amp; Gervais, 1880","Lacépède, 1818","Wada, Oishi &amp; Yamada, 2003","Lahille, 1905","Burmeister, 1865","Dabbene, 1902","(Linnaeus, 1758)","Lacépède, 1819","Lonnberg, 1906","Lahille, 1905","Rosel, Wilcox, Yamada &amp; Mullin, 2021"],["accepted","unaccepted","unaccepted","nomen dubium","unaccepted","unaccepted","unaccepted","unaccepted","unaccepted","unaccepted","unaccepted","unaccepted","unaccepted","accepted","accepted","unaccepted","taxon inquirendum","nomen dubium","unaccepted","unaccepted","unaccepted","accepted","unaccepted","unaccepted","unaccepted","nomen dubium","unaccepted","unaccepted","unaccepted","unaccepted","unaccepted","unaccepted","unaccepted","nomen dubium","unaccepted","unaccepted","unaccepted","unaccepted","accepted","unaccepted","nomen dubium","accepted","unaccepted","unaccepted","unaccepted","accepted","nomen dubium","unaccepted","unaccepted","accepted"],[null,"lapsus calami","synonym","incertae sedis","synonym","lapsus for Balaena (not p. 21, pl. 30 (= Megaptera novaeangliae)","synonym","synonym","synonym","synonym","synonym","synonym","synonym",null,null,"synonym",null,"incertae sedis","synonym","synonym",null,null,"synonym","synonym","synonym","incertae sedis","synonym","synonym","synonym","synonym","synonym","synonym","synonym","incertae sedis","synonym","misspelling","synonym","synonym",null,"synonym","incertae sedis",null,"synonym","synonym","synonym",null,"incertae sedis","synonym","synonym",null],[220,220,220,220,220,220,220,220,220,220,220,220,220,220,220,220,220,220,220,220,220,220,220,220,220,220,220,220,220,220,220,220,220,220,220,220,220,220,220,220,220,220,220,220,220,220,220,220,220,220],["Species","Species","Species","Species","Species","Species","Species","Species","Species","Species","Species","Species","Species","Species","Species","Species","Species","Species","Species","Species","Species","Species","Species","Species","Species","Species","Species","Species","Species","Species","Species","Species","Species","Species","Species","Species","Species","Species","Species","Species","Species","Species","Species","Species","Species","Species","Species","Species","Species","Species"],[137087,137087,137088,null,137091,254974,137092,137091,137088,137092,137091,137092,137091,231405,137088,137091,242603,null,137092,137090,137087,137089,137087,137091,137090,null,231405,137090,254995,137088,137090,137088,137092,null,137091,137091,137087,137090,137090,137091,null,343896,137091,137091,137091,137091,null,137091,231405,1576133],["Balaenoptera acutorostrata","Balaenoptera acutorostrata","Balaenoptera borealis",null,"Balaenoptera physalus","Eubalaena japonica","Megaptera novaeangliae","Balaenoptera physalus","Balaenoptera borealis","Megaptera novaeangliae","Balaenoptera physalus","Megaptera novaeangliae","Balaenoptera physalus","Balaenoptera bonaerensis","Balaenoptera borealis","Balaenoptera physalus","Balaenoptera brydei",null,"Megaptera novaeangliae","Balaenoptera musculus","Balaenoptera acutorostrata","Balaenoptera edeni","Balaenoptera acutorostrata","Balaenoptera physalus","Balaenoptera musculus",null,"Balaenoptera bonaerensis","Balaenoptera musculus","Balaenoptera musculus intermedia","Balaenoptera borealis","Balaenoptera musculus","Balaenoptera borealis","Megaptera novaeangliae",null,"Balaenoptera physalus","Balaenoptera physalus","Balaenoptera acutorostrata","Balaenoptera musculus","Balaenoptera musculus","Balaenoptera physalus",null,"Balaenoptera omurai","Balaenoptera physalus","Balaenoptera physalus","Balaenoptera physalus","Balaenoptera physalus",null,"Balaenoptera physalus","Balaenoptera bonaerensis","Balaenoptera ricei"],["Lacépède, 1804","Lacépède, 1804","Lesson, 1828",null,"(Linnaeus, 1758)","(Lacépède, 1818)","(Borowski, 1781)","(Linnaeus, 1758)","Lesson, 1828","(Borowski, 1781)","(Linnaeus, 1758)","(Borowski, 1781)","(Linnaeus, 1758)","Burmeister, 1867","Lesson, 1828","(Linnaeus, 1758)","Olsen, 1913",null,"(Borowski, 1781)","(Linnaeus, 1758)","Lacépède, 1804","Anderson, 1878","Lacépède, 1804","(Linnaeus, 1758)","(Linnaeus, 1758)",null,"Burmeister, 1867","(Linnaeus, 1758)","Burmeister, 1872","Lesson, 1828","(Linnaeus, 1758)","Lesson, 1828","(Borowski, 1781)",null,"(Linnaeus, 1758)","(Linnaeus, 1758)","Lacépède, 1804","(Linnaeus, 1758)","(Linnaeus, 1758)","(Linnaeus, 1758)",null,"Wada, Oishi &amp; Yamada, 2003","(Linnaeus, 1758)","(Linnaeus, 1758)","(Linnaeus, 1758)","(Linnaeus, 1758)",null,"(Linnaeus, 1758)","Burmeister, 1867","Rosel, Wilcox, Yamada &amp; Mullin, 2021"],[137013,137013,137013,137013,137013,137013,137013,137013,137013,137013,137013,137013,137013,137013,137013,137013,137013,137013,137013,137013,137013,137013,137013,137013,137013,137013,137013,137013,137013,137013,137013,137013,137013,137013,137013,137013,137013,137013,137013,137013,137013,137013,137013,137013,137013,137013,137013,137013,137013,137013],["Animalia","Animalia","Animalia","Animalia","Animalia","Animalia","Animalia","Animalia","Animalia","Animalia","Animalia","Animalia","Animalia","Animalia","Animalia","Animalia","Animalia","Animalia","Animalia","Animalia","Animalia","Animalia","Animalia","Animalia","Animalia","Animalia","Animalia","Animalia","Animalia","Animalia","Animalia","Animalia","Animalia","Animalia","Animalia","Animalia","Animalia","Animalia","Animalia","Animalia","Animalia","Animalia","Animalia","Animalia","Animalia","Animalia","Animalia","Animalia","Animalia","Animalia"],["Chordata","Chordata","Chordata","Chordata","Chordata","Chordata","Chordata","Chordata","Chordata","Chordata","Chordata","Chordata","Chordata","Chordata","Chordata","Chordata","Chordata","Chordata","Chordata","Chordata","Chordata","Chordata","Chordata","Chordata","Chordata","Chordata","Chordata","Chordata","Chordata","Chordata","Chordata","Chordata","Chordata","Chordata","Chordata","Chordata","Chordata","Chordata","Chordata","Chordata","Chordata","Chordata","Chordata","Chordata","Chordata","Chordata","Chordata","Chordata","Chordata","Chordata"],["Mammalia","Mammalia","Mammalia","Mammalia","Mammalia","Mammalia","Mammalia","Mammalia","Mammalia","Mammalia","Mammalia","Mammalia","Mammalia","Mammalia","Mammalia","Mammalia","Mammalia","Mammalia","Mammalia","Mammalia","Mammalia","Mammalia","Mammalia","Mammalia","Mammalia","Mammalia","Mammalia","Mammalia","Mammalia","Mammalia","Mammalia","Mammalia","Mammalia","Mammalia","Mammalia","Mammalia","Mammalia","Mammalia","Mammalia","Mammalia","Mammalia","Mammalia","Mammalia","Mammalia","Mammalia","Mammalia","Mammalia","Mammalia","Mammalia","Mammalia"],["Cetartiodactyla","Cetartiodactyla","Cetartiodactyla","Cetartiodactyla","Cetartiodactyla","Cetartiodactyla","Cetartiodactyla","Cetartiodactyla","Cetartiodactyla","Cetartiodactyla","Cetartiodactyla","Cetartiodactyla","Cetartiodactyla","Cetartiodactyla","Cetartiodactyla","Cetartiodactyla","Cetartiodactyla","Cetartiodactyla","Cetartiodactyla","Cetartiodactyla","Cetartiodactyla","Cetartiodactyla","Cetartiodactyla","Cetartiodactyla","Cetartiodactyla","Cetartiodactyla","Cetartiodactyla","Cetartiodactyla","Cetartiodactyla","Cetartiodactyla","Cetartiodactyla","Cetartiodactyla","Cetartiodactyla","Cetartiodactyla","Cetartiodactyla","Cetartiodactyla","Cetartiodactyla","Cetartiodactyla","Cetartiodactyla","Cetartiodactyla","Cetartiodactyla","Cetartiodactyla","Cetartiodactyla","Cetartiodactyla","Cetartiodactyla","Cetartiodactyla","Cetartiodactyla","Cetartiodactyla","Cetartiodactyla","Cetartiodactyla"],["Balaenopteridae","Balaenopteridae","Balaenopteridae","Balaenopteridae","Balaenopteridae","Balaenopteridae","Balaenopteridae","Balaenopteridae","Balaenopteridae","Balaenopteridae","Balaenopteridae","Balaenopteridae","Balaenopteridae","Balaenopteridae","Balaenopteridae","Balaenopteridae","Balaenopteridae","Balaenopteridae","Balaenopteridae","Balaenopteridae","Balaenopteridae","Balaenopteridae","Balaenopteridae","Balaenopteridae","Balaenopteridae","Balaenopteridae","Balaenopteridae","Balaenopteridae","Balaenopteridae","Balaenopteridae","Balaenopteridae","Balaenopteridae","Balaenopteridae","Balaenopteridae","Balaenopteridae","Balaenopteridae","Balaenopteridae","Balaenopteridae","Balaenopteridae","Balaenopteridae","Balaenopteridae","Balaenopteridae","Balaenopteridae","Balaenopteridae","Balaenopteridae","Balaenopteridae","Balaenopteridae","Balaenopteridae","Balaenopteridae","Balaenopteridae"],["Balaenoptera","Balaenoptera","Balaenoptera","Balaenoptera","Balaenoptera","Balaenoptera","Balaenoptera","Balaenoptera","Balaenoptera","Balaenoptera","Balaenoptera","Balaenoptera","Balaenoptera","Balaenoptera","Balaenoptera","Balaenoptera","Balaenoptera","Balaenoptera","Balaenoptera","Balaenoptera","Balaenoptera","Balaenoptera","Balaenoptera","Balaenoptera","Balaenoptera","Balaenoptera","Balaenoptera","Balaenoptera","Balaenoptera","Balaenoptera","Balaenoptera","Balaenoptera","Balaenoptera","Balaenoptera","Balaenoptera","Balaenoptera","Balaenoptera","Balaenoptera","Balaenoptera","Balaenoptera","Balaenoptera","Balaenoptera","Balaenoptera","Balaenoptera","Balaenoptera","Balaenoptera","Balaenoptera","Balaenoptera","Balaenoptera","Balaenoptera"],["Perrin, W.F. (2022). World Cetacea Database. Balaenoptera acutorostrata Lacépède, 1804. Accessed through: World Register of Marine Species at: https://www.marinespecies.org/aphia.php?p=taxdetails&amp;id=137087 on 2022-10-29","Perrin, W.F. (2022). World Cetacea Database. Balaenoptera acuturostrata Lacépède, 1804. Accessed through: World Register of Marine Species at: https://www.marinespecies.org/aphia.php?p=taxdetails&amp;id=231415 on 2022-10-29","Perrin, W.F. (2022). World Cetacea Database. Balaenoptera alba Giglioli, 1870. Accessed through: World Register of Marine Species at: https://www.marinespecies.org/aphia.php?p=taxdetails&amp;id=380436 on 2022-10-29","Perrin, W.F. (2022). World Cetacea Database. Balaenoptera andrejewi Author?, 1888. Accessed through: World Register of Marine Species at: https://www.marinespecies.org/aphia.php?p=taxdetails&amp;id=383744 on 2022-10-29","Perrin, W.F. (2022). World Cetacea Database. Balaenoptera antarctica Gray, 1846. Accessed through: World Register of Marine Species at: https://www.marinespecies.org/aphia.php?p=taxdetails&amp;id=380447 on 2022-10-29","Perrin, W.F. (2022). World Cetacea Database. Balaenoptera antarctica Temminck, 1841. Accessed through: World Register of Marine Species at: https://www.marinespecies.org/aphia.php?p=taxdetails&amp;id=383658 on 2022-10-29","Perrin, W.F. (2022). World Cetacea Database. Balaenoptera antarctica Temminck, 1841. Accessed through: World Register of Marine Species at: https://www.marinespecies.org/aphia.php?p=taxdetails&amp;id=383657 on 2022-10-29","Perrin, W.F. (2022). World Cetacea Database. Balaenoptera aragous Farines &amp; Carcasonne, 1829. Accessed through: World Register of Marine Species at: https://www.marinespecies.org/aphia.php?p=taxdetails&amp;id=383659 on 2022-10-29","Perrin, W.F. (2022). World Cetacea Database. Balaenoptera arctica Temminck, 1841. Accessed through: World Register of Marine Species at: https://www.marinespecies.org/aphia.php?p=taxdetails&amp;id=380433 on 2022-10-29","Perrin, W.F. (2022). World Cetacea Database. Balaenoptera astrolabe Pucheran, 1843. Accessed through: World Register of Marine Species at: https://www.marinespecies.org/aphia.php?p=taxdetails&amp;id=383660 on 2022-10-29","Perrin, W.F. (2022). World Cetacea Database. Balaenoptera australis Gray, 1846. Accessed through: World Register of Marine Species at: https://www.marinespecies.org/aphia.php?p=taxdetails&amp;id=380444 on 2022-10-29","Perrin, W.F. (2022). World Cetacea Database. Balaenoptera australis Lesson, 1828. Accessed through: World Register of Marine Species at: https://www.marinespecies.org/aphia.php?p=taxdetails&amp;id=380507 on 2022-10-29","Perrin, W.F. (2022). World Cetacea Database. Balaenoptera blythii Anderson, 1879. Accessed through: World Register of Marine Species at: https://www.marinespecies.org/aphia.php?p=taxdetails&amp;id=383661 on 2022-10-29","Perrin, W.F. (2022). World Cetacea Database. Balaenoptera bonaerensis Burmeister, 1867. Accessed through: World Register of Marine Species at: https://www.marinespecies.org/aphia.php?p=taxdetails&amp;id=231405 on 2022-10-29","Perrin, W.F. (2022). World Cetacea Database. Balaenoptera borealis Lesson, 1828. Accessed through: World Register of Marine Species at: https://www.marinespecies.org/aphia.php?p=taxdetails&amp;id=137088 on 2022-10-29","Perrin, W.F. (2022). World Cetacea Database. Balaenoptera brasiliensis Gray, 1846. Accessed through: World Register of Marine Species at: https://www.marinespecies.org/aphia.php?p=taxdetails&amp;id=383662 on 2022-10-29","Perrin, W.F. (2022). World Cetacea Database. Balaenoptera brydei Olsen, 1913. Accessed through: World Register of Marine Species at: https://www.marinespecies.org/aphia.php?p=taxdetails&amp;id=242603 on 2022-10-29","Perrin, W.F. (2022). World Cetacea Database. Balaenoptera caerulescens Lacépède, 1818. Accessed through: World Register of Marine Species at: https://www.marinespecies.org/aphia.php?p=taxdetails&amp;id=383745 on 2022-10-29","Perrin, W.F. (2022). World Cetacea Database. Balaenoptera capensis A. Smith, 1834. Accessed through: World Register of Marine Species at: https://www.marinespecies.org/aphia.php?p=taxdetails&amp;id=383663 on 2022-10-29","Perrin, W.F. (2022). World Cetacea Database. Balaenoptera carolinae Malm, 1866. Accessed through: World Register of Marine Species at: https://www.marinespecies.org/aphia.php?p=taxdetails&amp;id=380441 on 2022-10-29","Perrin, W.F. (2022). World Cetacea Database. Balaenoptera davidsoni Scammon, 1872. Accessed through: World Register of Marine Species at: https://www.marinespecies.org/aphia.php?p=taxdetails&amp;id=380427 on 2022-10-29","Perrin, W.F. (2022). World Cetacea Database. Balaenoptera edeni Anderson, 1878. Accessed through: World Register of Marine Species at: https://www.marinespecies.org/aphia.php?p=taxdetails&amp;id=137089 on 2022-10-29","Perrin, W.F. (2022). World Cetacea Database. Balaenoptera eschrichtius Rasch, 1845. Accessed through: World Register of Marine Species at: https://www.marinespecies.org/aphia.php?p=taxdetails&amp;id=383664 on 2022-10-29","Perrin, W.F. (2022). World Cetacea Database. Balaenoptera gibbar Lacépède, 1804. Accessed through: World Register of Marine Species at: https://www.marinespecies.org/aphia.php?p=taxdetails&amp;id=383665 on 2022-10-29","Perrin, W.F. (2022). World Cetacea Database. Balaenoptera gigas Reinhardt, 1857. Accessed through: World Register of Marine Species at: https://www.marinespecies.org/aphia.php?p=taxdetails&amp;id=383666 on 2022-10-29","Perrin, W.F. (2022). World Cetacea Database. Balaenoptera grimmi Author?, 1888. Accessed through: World Register of Marine Species at: https://www.marinespecies.org/aphia.php?p=taxdetails&amp;id=383746 on 2022-10-29","Perrin, W.F. (2022). World Cetacea Database. Balaenoptera huttoni Gray, 1874. Accessed through: World Register of Marine Species at: https://www.marinespecies.org/aphia.php?p=taxdetails&amp;id=383667 on 2022-10-29","Perrin, W.F. (2022). World Cetacea Database. Balaenoptera indica Blyth, 1859. Accessed through: World Register of Marine Species at: https://www.marinespecies.org/aphia.php?p=taxdetails&amp;id=383668 on 2022-10-29","Perrin, W.F. (2022). World Cetacea Database. Balaenoptera intermedia Burmeister, 1871. Accessed through: World Register of Marine Species at: https://www.marinespecies.org/aphia.php?p=taxdetails&amp;id=383669 on 2022-10-29","Perrin, W.F. (2022). World Cetacea Database. Balaenoptera iwasi Gray, 1846. Accessed through: World Register of Marine Species at: https://www.marinespecies.org/aphia.php?p=taxdetails&amp;id=383670 on 2022-10-29","Perrin, W.F. (2022). World Cetacea Database. Balaenoptera jubartes Lacépède, 1804. Accessed through: World Register of Marine Species at: https://www.marinespecies.org/aphia.php?p=taxdetails&amp;id=383671 on 2022-10-29","Perrin, W.F. (2022). World Cetacea Database. Balaenoptera laticeps Gray, 1846. Accessed through: World Register of Marine Species at: https://www.marinespecies.org/aphia.php?p=taxdetails&amp;id=380432 on 2022-10-29","Perrin, W.F. (2022). World Cetacea Database. Balaenoptera leucopteron Lesson, 1842. Accessed through: World Register of Marine Species at: https://www.marinespecies.org/aphia.php?p=taxdetails&amp;id=383672 on 2022-10-29","Perrin, W.F. (2022). World Cetacea Database. Balaenoptera maculata Lacépède, 1818. Accessed through: World Register of Marine Species at: https://www.marinespecies.org/aphia.php?p=taxdetails&amp;id=383747 on 2022-10-29","Perrin, W.F. (2022). World Cetacea Database. Balaenoptera mediterraneensis Lesson, 1828. Accessed through: World Register of Marine Species at: https://www.marinespecies.org/aphia.php?p=taxdetails&amp;id=383673 on 2022-10-29","Perrin, W.F. (2022). World Cetacea Database. Balaenoptera mediterranensis Cabrera, 1961. Accessed through: World Register of Marine Species at: https://www.marinespecies.org/aphia.php?p=taxdetails&amp;id=383674 on 2022-10-29","Perrin, W.F. (2022). World Cetacea Database. Balaenoptera microcephala Gray, 1850. Accessed through: World Register of Marine Species at: https://www.marinespecies.org/aphia.php?p=taxdetails&amp;id=383675 on 2022-10-29","Perrin, W.F. (2022). World Cetacea Database. Balaenoptera miramaris Lahille, 1898. Accessed through: World Register of Marine Species at: https://www.marinespecies.org/aphia.php?p=taxdetails&amp;id=383676 on 2022-10-29","Perrin, W.F. (2022). World Cetacea Database. Balaenoptera musculus (Linnaeus, 1758). Accessed through: World Register of Marine Species at: https://www.marinespecies.org/aphia.php?p=taxdetails&amp;id=137090 on 2022-10-29","Perrin, W.F. (2022). World Cetacea Database. Balaenoptera musculus Van Beneden &amp; Gervais, 1880. Accessed through: World Register of Marine Species at: https://www.marinespecies.org/aphia.php?p=taxdetails&amp;id=380449 on 2022-10-29","Perrin, W.F. (2022). World Cetacea Database. Balaenoptera nigra Lacépède, 1818. Accessed through: World Register of Marine Species at: https://www.marinespecies.org/aphia.php?p=taxdetails&amp;id=383748 on 2022-10-29","Perrin, W.F. (2022). World Cetacea Database. Balaenoptera omurai Wada, Oishi &amp; Yamada, 2003. Accessed through: World Register of Marine Species at: https://www.marinespecies.org/aphia.php?p=taxdetails&amp;id=343896 on 2022-10-29","Perrin, W.F. (2022). World Cetacea Database. Balaenoptera patachonica Lahille, 1905. Accessed through: World Register of Marine Species at: https://www.marinespecies.org/aphia.php?p=taxdetails&amp;id=383677 on 2022-10-29","Perrin, W.F. (2022). World Cetacea Database. Balaenoptera patachonicus Burmeister, 1865. Accessed through: World Register of Marine Species at: https://www.marinespecies.org/aphia.php?p=taxdetails&amp;id=380448 on 2022-10-29","Perrin, W.F. (2022). World Cetacea Database. Balaenoptera patagonica Dabbene, 1902. Accessed through: World Register of Marine Species at: https://www.marinespecies.org/aphia.php?p=taxdetails&amp;id=383678 on 2022-10-29","Perrin, W.F. (2022). World Cetacea Database. Balaenoptera physalus (Linnaeus, 1758). Accessed through: World Register of Marine Species at: https://www.marinespecies.org/aphia.php?p=taxdetails&amp;id=137091 on 2022-10-29","Perrin, W.F. (2022). World Cetacea Database. Balaenoptera punctulata Lacépède, 1819. Accessed through: World Register of Marine Species at: https://www.marinespecies.org/aphia.php?p=taxdetails&amp;id=383749 on 2022-10-29","Perrin, W.F. (2022). World Cetacea Database. Balaenoptera quoyii Lonnberg, 1906. Accessed through: World Register of Marine Species at: https://www.marinespecies.org/aphia.php?p=taxdetails&amp;id=383679 on 2022-10-29","Perrin, W.F. (2022). World Cetacea Database. Balaenoptera racovitzai Lahille, 1905. Accessed through: World Register of Marine Species at: https://www.marinespecies.org/aphia.php?p=taxdetails&amp;id=383681 on 2022-10-29","Perrin, W.F. (2022). World Cetacea Database. Balaenoptera ricei Rosel, Wilcox, Yamada &amp; Mullin, 2021. Accessed through: World Register of Marine Species at: https://www.marinespecies.org/aphia.php?p=taxdetails&amp;id=1576133 on 2022-10-29"],["urn:lsid:marinespecies.org:taxname:137087","urn:lsid:marinespecies.org:taxname:231415","urn:lsid:marinespecies.org:taxname:380436","urn:lsid:marinespecies.org:taxname:383744","urn:lsid:marinespecies.org:taxname:380447","urn:lsid:marinespecies.org:taxname:383658","urn:lsid:marinespecies.org:taxname:383657","urn:lsid:marinespecies.org:taxname:383659","urn:lsid:marinespecies.org:taxname:380433","urn:lsid:marinespecies.org:taxname:383660","urn:lsid:marinespecies.org:taxname:380444","urn:lsid:marinespecies.org:taxname:380507","urn:lsid:marinespecies.org:taxname:383661","urn:lsid:marinespecies.org:taxname:231405","urn:lsid:marinespecies.org:taxname:137088","urn:lsid:marinespecies.org:taxname:383662","urn:lsid:marinespecies.org:taxname:242603","urn:lsid:marinespecies.org:taxname:383745","urn:lsid:marinespecies.org:taxname:383663","urn:lsid:marinespecies.org:taxname:380441","urn:lsid:marinespecies.org:taxname:380427","urn:lsid:marinespecies.org:taxname:137089","urn:lsid:marinespecies.org:taxname:383664","urn:lsid:marinespecies.org:taxname:383665","urn:lsid:marinespecies.org:taxname:383666","urn:lsid:marinespecies.org:taxname:383746","urn:lsid:marinespecies.org:taxname:383667","urn:lsid:marinespecies.org:taxname:383668","urn:lsid:marinespecies.org:taxname:383669","urn:lsid:marinespecies.org:taxname:383670","urn:lsid:marinespecies.org:taxname:383671","urn:lsid:marinespecies.org:taxname:380432","urn:lsid:marinespecies.org:taxname:383672","urn:lsid:marinespecies.org:taxname:383747","urn:lsid:marinespecies.org:taxname:383673","urn:lsid:marinespecies.org:taxname:383674","urn:lsid:marinespecies.org:taxname:383675","urn:lsid:marinespecies.org:taxname:383676","urn:lsid:marinespecies.org:taxname:137090","urn:lsid:marinespecies.org:taxname:380449","urn:lsid:marinespecies.org:taxname:383748","urn:lsid:marinespecies.org:taxname:343896","urn:lsid:marinespecies.org:taxname:383677","urn:lsid:marinespecies.org:taxname:380448","urn:lsid:marinespecies.org:taxname:383678","urn:lsid:marinespecies.org:taxname:137091","urn:lsid:marinespecies.org:taxname:383749","urn:lsid:marinespecies.org:taxname:383679","urn:lsid:marinespecies.org:taxname:383681","urn:lsid:marinespecies.org:taxname:1576133"],[1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],[null,null,null,0,null,0,0,0,null,0,null,null,0,null,null,0,0,0,0,null,null,null,0,0,0,0,0,0,0,0,0,null,0,0,0,0,0,0,null,null,0,null,0,null,0,null,0,0,0,0],[null,null,null,0,null,0,0,0,null,0,null,null,0,null,null,0,0,0,0,null,null,null,0,0,0,0,0,0,0,0,0,null,0,0,0,0,0,0,null,null,0,null,0,null,0,null,0,0,0,0],[null,null,null,0,null,0,0,0,null,0,null,null,0,null,null,0,0,0,0,null,null,null,0,0,0,0,0,0,0,0,0,null,0,0,0,0,0,0,null,null,0,null,0,null,0,null,0,0,0,0],[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],["exact","exact","exact","exact","exact","exact","exact","exact","exact","exact","exact","exact","exact","exact","exact","exact","exact","exact","exact","exact","exact","exact","exact","exact","exact","exact","exact","exact","exact","exact","exact","exact","exact","exact","exact","exact","exact","exact","exact","exact","exact","exact","exact","exact","exact","exact","exact","exact","exact","exact"],["2008-08-20T11:25:36.853Z","2008-08-20T11:25:36.853Z","2009-01-15T13:04:03.637Z","2009-03-05T14:31:36.587Z","2009-01-15T13:04:03.637Z","2009-03-16T15:33:02.360Z","2009-03-16T15:33:02.360Z","2009-03-05T14:31:36.587Z","2009-01-15T13:04:03.637Z","2009-03-05T14:31:36.587Z","2009-01-15T13:04:03.637Z","2009-01-16T06:39:12.160Z","2009-03-05T14:31:36.587Z","2008-08-20T11:25:36.853Z","2008-08-20T11:25:36.853Z","2009-03-05T14:31:36.587Z","2020-07-13T09:51:33.813Z","2009-03-05T14:31:36.587Z","2009-03-05T14:31:36.587Z","2009-01-15T13:04:03.637Z","2009-01-15T13:04:03.637Z","2009-03-19T19:56:16.150Z","2009-03-05T14:31:36.587Z","2009-03-05T14:31:36.587Z","2009-03-05T14:31:36.587Z","2009-03-05T14:31:36.587Z","2009-03-05T14:31:36.587Z","2009-03-05T14:31:36.587Z","2009-03-05T14:31:36.587Z","2009-03-05T14:31:36.587Z","2009-03-05T14:31:36.587Z","2009-01-15T13:04:03.637Z","2009-03-05T14:31:36.587Z","2009-03-05T14:31:36.587Z","2009-03-05T14:31:36.587Z","2009-03-05T14:31:36.587Z","2009-03-05T14:31:36.587Z","2009-03-05T14:31:36.587Z","2008-08-20T11:25:36.853Z","2009-12-31T18:14:43.750Z","2009-03-05T14:31:36.587Z","2008-08-20T11:25:36.853Z","2009-03-05T14:31:36.587Z","2009-01-15T13:04:03.637Z","2009-03-05T14:31:36.587Z","2008-08-20T11:25:36.853Z","2009-03-05T14:31:36.587Z","2009-03-05T14:31:36.587Z","2009-03-05T14:31:36.587Z","2022-04-11T08:04:31.177Z"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>AphiaID<\/th>\n      <th>url<\/th>\n      <th>scientificname<\/th>\n      <th>authority<\/th>\n      <th>status<\/th>\n      <th>unacceptreason<\/th>\n      <th>taxonRankID<\/th>\n      <th>rank<\/th>\n      <th>valid_AphiaID<\/th>\n      <th>valid_name<\/th>\n      <th>valid_authority<\/th>\n      <th>parentNameUsageID<\/th>\n      <th>kingdom<\/th>\n      <th>phylum<\/th>\n      <th>class<\/th>\n      <th>order<\/th>\n      <th>family<\/th>\n      <th>genus<\/th>\n      <th>citation<\/th>\n      <th>lsid<\/th>\n      <th>isMarine<\/th>\n      <th>isBrackish<\/th>\n      <th>isFreshwater<\/th>\n      <th>isTerrestrial<\/th>\n      <th>isExtinct<\/th>\n      <th>match_type<\/th>\n      <th>modified<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,7,9,12,21,22,23,24]},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+</div>
+</div>
+</section>
+<section id="access-classification-of-a-species" class="level3">
+<h3 class="anchored" data-anchor-id="access-classification-of-a-species">Access classification of a species</h3>
+<p>Not all returned data are equally easy to work with - here’s a list of lists of lists.</p>
+<div class="cell">
+<details>
+<summary>Show me the code</summary>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>worms_class_endpoint <span class="ot">&lt;-</span> <span class="fu">paste0</span>(worms_url, <span class="st">'AphiaClassificationByAphiaID/%s'</span>)</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>worms_class_url <span class="ot">&lt;-</span> <span class="fu">sprintf</span>(worms_class_endpoint, worms_id)</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>worms_class <span class="ot">&lt;-</span> jsonlite<span class="sc">::</span><span class="fu">fromJSON</span>(worms_class_url)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<p>Many coders have developed packages to work with specific APIs - the ROpenSci <code>taxize</code> package works well with taxonomic info from WoRMS and several other sources. There’s also a <code>rredlist</code> package for working with the IUCN RedList API.</p>
 </section>
 </section>
 <section id="read-in-data" class="level2">
 <h2 class="anchored" data-anchor-id="read-in-data">Read in data</h2>
 <section id="read-in-cleaned-iucn-data" class="level3">
 <h3 class="anchored" data-anchor-id="read-in-cleaned-iucn-data">read in cleaned IUCN data</h3>
-<ul>
-<li>note species ID, name, and risk category among other data</li>
-</ul>
+<p>This set of species includes all marine-associated mammals only. For now, note IUCN species ID, scientific and common name, and risk category, among other information. The risk category is what we want - up to date as of the end of 2021.</p>
+<div class="cell">
+<details>
+<summary>Show me the code</summary>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>iucn_spp_df <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="fu">here</span>(<span class="st">'data/iucn_mar_mammal_info_v2021-3.csv'</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
 </section>
 <section id="read-in-cleaned-aquamaps-species-info" class="level3">
 <h3 class="anchored" data-anchor-id="read-in-cleaned-aquamaps-species-info">Read in cleaned AquaMaps species info</h3>
-<ul>
-<li>note sciname, taxonomy, risk category, IUCN id, and AquaMaps ID</li>
-</ul>
+<p>This set of species includes all marine mammals only. For now, note AquaMaps species ID, IUCN species ID, name, sciname, and risk category, among other information. Here, the risk category is not up to date - this dataset was last updated in 2020.</p>
+<p>The critical piece here is the AquaMaps species ID, which we need to know for the spatial information in a moment. We’ll use IUCN id to join the up-to-date risk category to the AquaMaps species ID.</p>
+<div class="cell">
+<details>
+<summary>Show me the code</summary>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>am_spp_df <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="fu">here</span>(<span class="st">'data/am_mammal_info_v10_2019.csv'</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>  janitor<span class="sc">::</span><span class="fu">clean_names</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rename</span>(<span class="at">am_sid =</span> species_id, <span class="at">iucn_sid =</span> iucn_id)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
 </section>
 <section id="read-in-cleaned-aquamaps-species-cell-info" class="level3">
 <h3 class="anchored" data-anchor-id="read-in-cleaned-aquamaps-species-cell-info">Read in cleaned AquaMaps species-cell info</h3>
-<ul>
-<li>note loiczid, aquamaps id, prob</li>
-</ul>
+<p>Note the columns loiczid, AquaMaps species id, and probability of occurrence. LOICZID is a cell code that we’ll match to spatial information in a minute.</p>
+<div class="cell">
+<details>
+<summary>Show me the code</summary>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>am_spp_cells_df <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="fu">here</span>(<span class="st">'data/am_mammal_hcaf_cropped_v10_2019.csv'</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
 </section>
 <section id="read-in-cleaned-hcaf-data" class="level3">
 <h3 class="anchored" data-anchor-id="read-in-cleaned-hcaf-data">Read in cleaned HCAF data</h3>
-<ul>
-<li>then convert to LOICZID raster as base raster</li>
-</ul>
+<p>This is cropped to the Eastern Pacific Ocean - east of -150 longitude, north of the equator. We will turn this into a raster for mapping our species!</p>
+<div class="cell">
+<details>
+<summary>Show me the code</summary>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>am_hcaf_df <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="fu">here</span>(<span class="st">'data/am_hcaf_cropped_v7.csv'</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>  janitor<span class="sc">::</span><span class="fu">clean_names</span>()</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>longlat_id_df <span class="ot">&lt;-</span> am_hcaf_df <span class="sc">%&gt;%</span></span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(ocean_area <span class="sc">&gt;</span> <span class="dv">0</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(center_long, center_lat, loiczid)</span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a>hcaf_r <span class="ot">&lt;-</span> <span class="fu">rast</span>(longlat_id_df, <span class="at">type =</span> <span class="st">'xyz'</span>, <span class="at">crs =</span> <span class="st">'epsg:4326'</span>)</span>
+<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(hcaf_r)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<p><img src="ecological_data_files/figure-html/unnamed-chunk-22-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
 </section>
 </section>
 <section id="start-joining" class="level2">
 <h2 class="anchored" data-anchor-id="start-joining">Start joining</h2>
-<ul>
-<li>use IUCN instead of AquaMaps for risk category: keep id, risk category</li>
-<li>use AquaMaps instead of IUCN for sciname: keep IUCN id, AM id, and sciname</li>
-<li>join these</li>
-<li>now join species info onto spp-cell info</li>
-<li>filter by some minimum probability?</li>
-<li>assign numeric values to risk codes using</li>
-</ul>
+<p>We want to map IUCN risk codes against AquaMaps spatial data. Join the IUCN and AquaMaps information, to get the risk codes attached to the AquaMaps ids.</p>
+<p>Then, using AquaMaps IDs, join the risk codes to the LOICZID information. Some mammal spp don’t occur in our selected region (e.g., South African fur seal), so end up with NA for LOICZID.</p>
+<div class="cell">
+<details>
+<summary>Show me the code</summary>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>id_risk_df <span class="ot">&lt;-</span> iucn_spp_df <span class="sc">%&gt;%</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(iucn_sid, sciname, category) <span class="sc">%&gt;%</span></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">cat_score =</span> <span class="fu">case_when</span>(category <span class="sc">==</span> <span class="st">'LC'</span> <span class="sc">~</span> <span class="dv">0</span>,</span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>                               category <span class="sc">==</span> <span class="st">'NT'</span> <span class="sc">~</span> <span class="dv">1</span>,</span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>                               category <span class="sc">==</span> <span class="st">'VU'</span> <span class="sc">~</span> <span class="dv">2</span>,</span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>                               category <span class="sc">==</span> <span class="st">'EN'</span> <span class="sc">~</span> <span class="dv">3</span>,</span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>                               category <span class="sc">==</span> <span class="st">'CR'</span> <span class="sc">~</span> <span class="dv">4</span>,</span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a>                               category <span class="sc">==</span> <span class="st">'EX'</span> <span class="sc">~</span> <span class="dv">5</span>,</span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a>                               <span class="cn">TRUE</span> <span class="sc">~</span> <span class="cn">NA_real_</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">left_join</span>(am_spp_df, <span class="at">by =</span> <span class="st">'iucn_sid'</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(iucn_sid, am_sid, sciname, f_bname, category, cat_score) <span class="sc">%&gt;%</span></span>
+<span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(am_sid))</span>
+<span id="cb12-13"><a href="#cb12-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-14"><a href="#cb12-14" aria-hidden="true" tabindex="-1"></a>risk_cells_df <span class="ot">&lt;-</span> id_risk_df <span class="sc">%&gt;%</span></span>
+<span id="cb12-15"><a href="#cb12-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">left_join</span>(am_spp_cells_df, <span class="at">by =</span> <span class="st">'am_sid'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
 </section>
-<section id="analysis-1-species-richness" class="level2">
-<h2 class="anchored" data-anchor-id="analysis-1-species-richness">Analysis 1: species richness</h2>
-<ul>
-<li>group_by cell, summarize n_distinct(species), map to base raster</li>
-</ul>
+<section id="analysis-1-map-a-single-species-by-relative-environmental-suitability" class="level2">
+<h2 class="anchored" data-anchor-id="analysis-1-map-a-single-species-by-relative-environmental-suitability">Analysis 1: map a single species by relative environmental suitability</h2>
+<p>Let’s look at suitability of environments for killer whales, aka <em>Orcinus orca</em>. We’ll create a raster based on our cropped HCAF, by substituting in values of prob for values of LOICZID.</p>
+<div class="cell">
+<details>
+<summary>Show me the code</summary>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>orca_df <span class="ot">&lt;-</span> risk_cells_df <span class="sc">%&gt;%</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(sciname <span class="sc">==</span> <span class="st">'Orcinus orca'</span>)</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>orca_prob_r <span class="ot">&lt;-</span> terra<span class="sc">::</span><span class="fu">subst</span>(hcaf_r, </span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>                            <span class="at">from =</span> orca_df<span class="sc">$</span>loiczid, </span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>                            <span class="at">to =</span> orca_df<span class="sc">$</span>prob,</span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>                            <span class="at">others =</span> <span class="cn">NA</span>) <span class="do">### "others" is in dev version</span></span>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(orca_prob_r,</span>
+<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a>     <span class="at">main =</span> <span class="st">'probability of occurrence for Orcinus orca'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<p><img src="ecological_data_files/figure-html/unnamed-chunk-26-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<section id="lets-ggplot-it" class="level3">
+<h3 class="anchored" data-anchor-id="lets-ggplot-it">Let’s ggplot it</h3>
+<div class="cell">
+<details>
+<summary>Show me the code</summary>
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>orca_prob_df <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(orca_prob_r, <span class="at">xy =</span> <span class="cn">TRUE</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rename</span>(<span class="at">prob =</span> loiczid)</span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>land_sf <span class="ot">&lt;-</span> <span class="fu">ne_countries</span>(<span class="at">scale =</span> <span class="dv">110</span>, </span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>                        <span class="at">continent =</span> <span class="st">'north america'</span>,</span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a>                        <span class="at">returnclass =</span> <span class="st">'sf'</span>)</span>
+<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_raster</span>(<span class="at">data =</span> orca_prob_df, <span class="fu">aes</span>(x, y, <span class="at">fill =</span> prob)) <span class="sc">+</span></span>
+<span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_viridis_c</span>() <span class="sc">+</span></span>
+<span id="cb14-11"><a href="#cb14-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_sf</span>(<span class="at">data =</span> land_sf) <span class="sc">+</span></span>
+<span id="cb14-12"><a href="#cb14-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_sf</span>(<span class="at">xlim =</span> <span class="fu">c</span>(<span class="sc">-</span><span class="dv">150</span>, <span class="sc">-</span><span class="dv">100</span>), <span class="at">ylim =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">60</span>)) <span class="sc">+</span></span>
+<span id="cb14-13"><a href="#cb14-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_void</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<p><img src="ecological_data_files/figure-html/unnamed-chunk-28-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
 </section>
-<section id="analysis-2-mean-risk" class="level2">
-<h2 class="anchored" data-anchor-id="analysis-2-mean-risk">Analysis 2: mean risk</h2>
-<ul>
-<li>group_by cell, summarize mean(risk score, na.rm = TRUE), map to base raster</li>
-</ul>
+</section>
+<section id="analysis-2-species-richness" class="level2">
+<h2 class="anchored" data-anchor-id="analysis-2-species-richness">Analysis 2: species richness</h2>
+<p>Here we can group by cell and count up the number of spp found. Note, we may want to not count species with low probability of occurrence - let’s apply a filter for probability at least 50%.</p>
+<div class="cell">
+<details>
+<summary>Show me the code</summary>
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>spp_rich_df <span class="ot">&lt;-</span> risk_cells_df <span class="sc">%&gt;%</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(prob <span class="sc">&gt;=</span> <span class="fl">0.5</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(loiczid) <span class="sc">%&gt;%</span></span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">n_spp =</span> <span class="fu">n_distinct</span>(am_sid))</span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>spp_rich_r <span class="ot">&lt;-</span> terra<span class="sc">::</span><span class="fu">subst</span>(hcaf_r, </span>
+<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a>                           <span class="at">from =</span> spp_rich_df<span class="sc">$</span>loiczid, </span>
+<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a>                           <span class="at">to =</span> spp_rich_df<span class="sc">$</span>n_spp,</span>
+<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a>                           <span class="at">others =</span> <span class="cn">NA</span>)</span>
+<span id="cb15-10"><a href="#cb15-10" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb15-11"><a href="#cb15-11" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(spp_rich_r,</span>
+<span id="cb15-12"><a href="#cb15-12" aria-hidden="true" tabindex="-1"></a>     <span class="at">main =</span> <span class="st">'Species richness of marine mammals'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<p><img src="ecological_data_files/figure-html/unnamed-chunk-30-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<section id="ggplot-at-your-leisure" class="level3">
+<h3 class="anchored" data-anchor-id="ggplot-at-your-leisure">ggplot at your leisure</h3>
+</section>
+</section>
+<section id="analysis-3-mean-risk" class="level2">
+<h2 class="anchored" data-anchor-id="analysis-3-mean-risk">Analysis 3: mean risk</h2>
+<p>Here we can group by cell and find the average risk. First, let’s see how many spp in each risk category.</p>
+<div class="cell">
+<details>
+<summary>Show me the code</summary>
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(id_risk_df<span class="sc">$</span>category) <span class="do">### note a few DD</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+CR DD EN EX LC NT VU 
+ 3  7 14  2 70 11 10 </code></pre>
+</div>
+<details>
+<summary>Show me the code</summary>
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>mean_risk_df <span class="ot">&lt;-</span> risk_cells_df <span class="sc">%&gt;%</span></span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(prob <span class="sc">&gt;=</span> <span class="fl">0.5</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(loiczid) <span class="sc">%&gt;%</span></span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>  <span class="co"># summarize(mean_risk = mean(cat_score))</span></span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">mean_risk =</span> <span class="fu">mean</span>(cat_score, <span class="at">na.rm =</span> <span class="cn">TRUE</span>))</span>
+<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a>mean_risk_r <span class="ot">&lt;-</span> terra<span class="sc">::</span><span class="fu">subst</span>(hcaf_r, </span>
+<span id="cb18-8"><a href="#cb18-8" aria-hidden="true" tabindex="-1"></a>                           <span class="at">from =</span> mean_risk_df<span class="sc">$</span>loiczid, </span>
+<span id="cb18-9"><a href="#cb18-9" aria-hidden="true" tabindex="-1"></a>                           <span class="at">to =</span> mean_risk_df<span class="sc">$</span>mean_risk,</span>
+<span id="cb18-10"><a href="#cb18-10" aria-hidden="true" tabindex="-1"></a>                           <span class="at">others =</span> <span class="cn">NA</span>)</span>
+<span id="cb18-11"><a href="#cb18-11" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb18-12"><a href="#cb18-12" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(mean_risk_r,</span>
+<span id="cb18-13"><a href="#cb18-13" aria-hidden="true" tabindex="-1"></a>     <span class="at">main =</span> <span class="st">'Species richness of marine mammals'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<p><img src="ecological_data_files/figure-html/unnamed-chunk-32-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
 </section>
 </section>
 
@@ -258,6 +440,24 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <!-- /main column -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
   const icon = "";
   const anchorJS = new window.AnchorJS();
   anchorJS.options = {
