@@ -195,7 +195,10 @@ orca_prob_r <- terra::subst(hcaf_r,
                             from = orca_df$loiczid, 
                             to = orca_df$prob,
                             others = NA) ### "others" is in dev version
-  
+### if "others = NA" not supported: set unchanged cells to NA,
+### based on max possible probability = 1
+# orca_prob_r[orca_prob_r > 1] <- NA 
+
 plot(orca_prob_r,
      main = 'probability of occurrence for Orcinus orca')
 ```
@@ -234,6 +237,9 @@ spp_rich_r <- terra::subst(hcaf_r,
                            from = spp_rich_df$loiczid, 
                            to = spp_rich_df$n_spp,
                            others = NA)
+### if "others = NA" not supported: set unchanged cells to NA,
+### based on known max # of species
+# spp_rich_r[spp_rich_r > 117] <- NA 
   
 plot(spp_rich_r,
      main = 'Species richness of marine mammals')
@@ -251,16 +257,27 @@ table(id_risk_df$category) ### note a few DD
 mean_risk_df <- risk_cells_df %>%
   filter(prob >= 0.5) %>%
   group_by(loiczid) %>%
-  summarize(mean_risk = mean(cat_score))
-  # summarize(mean_risk = mean(cat_score, na.rm = TRUE))
+  ### note what happens if you don't remove NAs!
+  # summarize(mean_risk = mean(cat_score))
+  summarize(mean_risk = mean(cat_score, na.rm = TRUE))
 
 mean_risk_r <- terra::subst(hcaf_r, 
                            from = mean_risk_df$loiczid, 
                            to = mean_risk_df$mean_risk,
                            others = NA)
-  
+### if "others = NA" not supported: set unchanged cells to NA,
+### based on known max value of cat_score
+# mean_risk_r[mean_risk_r > 5] <- NA 
+
 plot(mean_risk_r,
      main = 'Species richness of marine mammals')
 ```
 
+## Combine multiple rasters into one object
+
+```{r}
+all_layers <- c(hcaf_r, orca_prob_r, spp_rich_r, mean_risk_r) %>%
+  setNames(c('cell id', 'orca prob', 'species richness', 'mean risk'))
+plot(all_layers)
+```
 
