@@ -30,7 +30,7 @@ All API calls will start with most of that as a stem. We will change the endpoin
 
 For most endpoints we will also need an authorization token.
 
-Try one of the examples, and note how the URL is filled in with different parameters and token=XXXXX. We'll borrow that token for our work today, but if you do real work with this API, request your own token.
+Try clicking on one of the API examples in the documentation (other than Red List version which requires no token) - e.g., ["Example: All species for Azerbaijan (AZ)"](https://apiv3.iucnredlist.org/api/v3/country/getspecies/AZ?token=9bb4facb6d23f48efbf424bb05c0c1ef1cf6f468393bc745d42179ac4aca5fee) - and note how the URL is filled in with different parameters and probably ends with `token=XXXXX`. We'll borrow that token for our work today, but if you do real work with this API, request your own token.
 
 Use `usethis::edit_r_environ()` to open `.Renviron` file. Type a key name, then paste in key, then save and close. Access using `Sys.getenv()`
 
